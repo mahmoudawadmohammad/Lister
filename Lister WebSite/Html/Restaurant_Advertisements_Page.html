@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Reduce The Odds For A Lacuna XSS -->
+		<meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content="">
+    <meta name="description" content="">
+    <title>Restaurant Advertisements Page</title>
+    <link rel="icon" href="../Icons/Ads_1.ico">
+            <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="../Css/all.min.css">
+            <!-- Render All Element Nornmally -->
+    <link rel="stylesheet" href="../Css/Normalize.css">
+            <!-- Link BootStrap File Css -->
+    <link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+						<!-- Link Subscribe File Css -->
+		<link rel="stylesheet" href="../Css/Common_For_All.css">
+            <!-- Link Main File Css -->
+    <link rel="stylesheet" href="../Css/Restaurant_Advertisements_Page.css">
+    <link rel="stylesheet" href="" id="linkArabic">
+  </head>
+  <body>
+		<!-- Navigation Bar Start -->
+		<nav class="sidebar close">
+			<header>
+				<div class="image-text">
+					<span class="image" title="Resturant Logo">
+						<img src="../images/2.gif" alt="Resturant Logo">
+					</span>
+					<div class="text header-text">
+						<span class="name">First & Best</span>
+					</div>
+				</div>
+				<i class="fa-solid fa-angle-right toggle" title="Let's Go ( Alt + O )"></i>
+			</header>
+			<div class="menu-bar">
+				<div class="menu">
+						<li class="navigation-links home-link" title="Main Page ( Alt + P )">
+							<a href="Restaurant_Home_Page.html">
+								<i class="fa-solid fa-home icon"></i>
+								<span class="text nav-text home-text">Main Page</span>
+							</a>
+						</li>
+						<li class="navigation-links menu-link" title="Menus ( Alt + M )">
+							<a href="Restaurant_Menus_Page.html">
+								<i class="fa-solid fa-calendar-minus icon"></i>
+								<span class="text nav-text menu-text">Menus</span>
+							</a>
+						</li>
+						<li class="navigation-links order-link" title="Orders ( Alt + O )">
+							<a href="Restaurant_Orders_Reservations_Page.html">
+								<i class="fa-solid fa-bell-concierge icon"></i>
+								<span class="text nav-text order-text">Orders</span>
+							</a>
+						</li>
+						<li class="navigation-links advertisements-link" title="Advertisements ( Ctrl + Alt + A )">
+							<a href="Restaurant_Advertisements_Page.html">
+								<i class="fa-solid fa-rectangle-ad icon"></i>
+								<span class="text nav-text advertisements-text">Advertisements</span>
+							</a>
+						</li>
+						<li class="navigation-links settings-link" title="Settings ( Ctrl + Alt + S )">
+							<a href="Restaurant_Settings_Page.html">
+								<i class="fa-solid fa-gear icon"></i>
+								<span class="text nav-text settings-text">Settings</span>
+							</a>
+						</li>
+				</div>
+				<div class="bottom-navigation" data-bs-toggle="modal" data-bs-target="#logout">
+					<li class="logout-link" title="Logout">
+						<a href="#">
+							<i class="fa-solid fa-right-from-bracket icon"></i> 
+							<span class="text nav-text logout-text">Logout</span>
+							<span class="image" title="Personal Image">
+								<img src="../images/Logo_User.png" alt="Personal Image">
+							</span>
+						</a>
+					</li>
+				</div>
+			</div>
+		</nav>
+		<!-- Navigation Bar End -->
+		<!-- ----------------------- -->
+		<!-- Button trigger modal -->
+
+		<div class="modal fade" id="logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">Log Out</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<span>Are you sure you want to log out of the website</span>
+					</div>
+					<div class="modal-footer">
+						<button type="button" data-bs-dismiss="modal" class="btn_close">Close</button>
+						<button class="btn_close logout" onclick="logout()">Log out</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Start -->
+		<header class="top-header">
+			<div class="image-text">
+				<a href="Restaurant_Settings_Page.html">
+					<span class="image" title="Personal Image">
+						<img src="../images/Logo_User.png" alt="Personal Image">
+					</span>
+				</a>
+			</div>
+			<button id="toggle_Extenstions_Tool" class="btn btn-secondary" onclick="ToggleExtenstionTool()">Hide Extenstoin Tools</button>
+		</header>
+		<!-- Header End -->
+		<!-- ----------------------- -->
+		<!-- Extension Tool Start  -->
+		<nav class="extension-tool">
+			<li class="navigation-links todo-list" title="To Do List ( Shift + T )" data-bs-toggle="modal" data-bs-target="#staticBackdropToDoList" id="todo-list">
+				<a href="#">
+					<i class="fa-solid fa-clipboard ex-icon"></i>
+				</a>
+			</li>
+			<li class="navigation-links sticky-note" title="Sticky Note ( Shift + N )" data-bs-toggle="modal" data-bs-target="#staticBackdropStickyNote" id="sticky-note">
+				<a href="#">
+					<i class="fa-regular fa-note-sticky ex-icon"></i>
+				</a>
+			</li>
+			<li class="navigation-links language" title="Language ( Shift + L )" id="languages" onclick="CheckLanguage()">
+				<a href="#">
+					<i class="fa-solid fa-globe ex-icon"></i>
+				</a>
+			</li>
+			<li class="navigation-links theme-mode" title="Theme Mode ( Shift + M )" id="theme-mode" onclick="ChangeMode()">
+				<a href="#">
+					<i class="fa-solid fa-circle-half-stroke ex-icon"></i>
+				</a>
+			</li>
+		</nav>
+		<!-- Extension Tool End  -->
+		<!-- ----------------------- -->
+		<!-- Popup Window Todo List Start -->
+		<div class="modal fade" id="staticBackdropToDoList">
+      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="staticBackdropLabel">To Do List</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-todo">
+							<div class="form">
+								<input type="text" class="input" dir="auto" spellcheck="false" autocomplete="off" placeholder="Enter Any Thing You Want"/>
+								<input type="submit" class="add" value="Add Task" />
+							</div>
+							<h2>Tasks</h2>
+							<div class="tasks"></div>
+							</div>
+          </div>
+          <div class="modal-footer">
+            <button data-bs-dismiss="modal" class="btn_close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+		<!-- Popup Window Todo List End -->
+		<!-- ----------------------- -->
+		<!-- Popup Window Sticky Note Start -->
+		<div class="modal fade" id="staticBackdropStickyNote">
+      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="staticBackdropLabel">Sticky Note</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <header>
+							<form id="new-task-form">
+								<input type="text" name="new-task-input" id="new-task-input" placeholder="Enter Any Note You Want" autocomplete="off" 
+								spellcheck="false" dir="auto"/>
+								<input type="submit" id="new-task-submit" value="Add Note" />
+							</form>
+						</header>
+						<main>
+							<section class="task-list">
+								<h2>Notes</h2>
+								<div id="tasks">
+								</div>
+								<button id="clear-all">Clear All</button>
+							</section>
+						</main>
+          </div>
+          <div class="modal-footer">
+            <button data-bs-dismiss="modal" class="btn_close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+		<!-- Popup Window Sticky Note End -->
+		<!-- ----------------------- -->
+		<!-- Source And Welcoming Start -->
+		<section class="source-welcome">
+			<div class="source">
+				<a href="Restaurant_Advertisements_Page.html">Advertisements Page</a>
+				<span>></span>
+			</div>
+			<div class="welcome">
+				<span class="text">First & Best</span>
+			</div>
+		</section>
+		<!-- Source And Welcoming End -->
+		<!-- ----------------------- -->
+		<!-- Up Arrow Start -->
+		<span class="up-arrow">
+			<img src="../Images/ar3.png">
+		</span>
+		<!-- Up Arrow End -->
+		<!-- ----------------------- -->
+		<!-- Advertisement Benifets Start -->
+		<section class="container">
+			<div class="cards one">
+				<div class="explain">
+					<h3>What Is The Interest Of Advertising</h3>
+					<hr>
+					<li id="explain1">Publish The Product And Varieties Of The Restaurant To The Largest Scale</li>
+					<li id="explain2">Achieve Additional Huge Profits</li>
+					<li id="explain3">Make The Restaurant More Famous When People General</li>	
+				</div>
+			</div>
+			<div class="cards imgage-ads">
+				<div class="imgage-ads">
+					<!-- <img src="../images/Restaurant Owner.gif" alt=""> -->
+				</div>
+			</div>
+		</section>
+		<!-- Advertisement Benifets End -->
+		<!-- ----------------------- -->
+		<!-- Advertisement Subscribe Start  -->
+		<div class="ad-subscribe" data-bs-toggle="modal" data-bs-target="#AdvertismentSubscribe">
+			<span>Subscribe</span>
+			<i class="fa-solid fa-rectangle-ad"></i>
+		</div>
+		<div class="modal fade advertisment-subscribe" id="AdvertismentSubscribe">
+      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="staticBackdropLabel">Subscribe</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <form action="" method="post" id="form-container">
+                <input type="hidden" name="Restaurant_ID">
+										<div class="input-div three datetime">
+                      <div>
+                        <h5>Advertisement Start Date</h5>
+                        <input type="datetime-local" id="Ads_Start_Date" name="Ads_Start_Date" autocomplete="off" 
+                        spellcheck="false" dir="auto">
+                        <div class="i">
+                          <i class="fa-solid fa-calendar-plus" title="Date Icon"></i>
+                        </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message_Ads_Start_Date"></small>
+                      </div>
+                    </div>
+										<div class="input-div four datetime">
+                      <div>
+                        <h5>Advertisement End Date</h5>
+                        <input type="datetime-local" id="Ads_End_Date" name="Ads_End_Date" autocomplete="off" 
+                        spellcheck="false" dir="auto">
+                        <div class="i">
+                          <i class="fa-solid fa-calendar-minus" title="Date Icon"></i>
+                        </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message_Ads_End_Date"></small>
+                      </div>
+                    </div>
+										<div class="input-div five">
+                      <div>
+                        <h5>Select Items</h5>
+                        <div class="multi-selector">
+													<div class="select-field">
+													<input type="text" name="" placeholder="Choose Items" id="selectItems" class="input-selector" readonly>
+													<span class="down-arrow">&blacktriangledown;</span>
+													</div>
+													<div class="list">
+														<label for="All" class="Item" onclick="selectAll()">
+															<input type="checkbox" name="" id="All">
+															<span>All</span>
+														</label>
+														<label for="Item1" class="Item">
+															<input type="checkbox" name="" id="Item1">
+															<span>Item1</span>
+														</label>
+															<label for="Item2" class="Item">
+																<input type="checkbox" name="" id="Item2">
+																<span>Item2</span>
+															</label>
+														<label for="Item3" class="Item">
+															<input type="checkbox" name="" id="Item3">
+															<span>Item3</span>
+														</label>
+													</div>
+													</div>
+                        <div class="i">
+                          <i class="fa-solid fa-calendar-minus" title="Date Icon"></i>
+                        </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message_selectItems"></small>
+                      </div>
+                    </div>
+										<div class="input-div cntOrder">
+                        <div>
+                            <h5>Orders Count</h5>
+                            <input type="number" id="OrdersCount" class="text-center" name="OrdersCount"  min="0" step="1">
+                            <div class="i">
+                              <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                        </div>
+                    </div>
+										<div class="input-div required-price">
+                        <div>
+                            <h5>Required Price</h5>
+                            <input type="number" id="RequiredPrice" class="text-center" name="RequiredPrice" min="0" step="1">
+                            <div class="i">
+                              <i class="fa-solid fa-money-bill" title="price Icon"></i>
+                            </div>
+														<button type="button" id="illustrationAds" class="btn btn-outline-warning" title="Note !" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="If you do not enter the required price field and the number of orders, the discount will be on a specific item, or if the total invoice exceeds a certain price or the number of items exceeds a certain price"><i class="fa-solid fa-circle-info"></i></button>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                        </div>
+                    </div>
+										<div class="input-div discount-percentage">
+                        <div>
+                            <h5>Discount Percentage</h5>
+                            <input type="number" id="AdvertisementPercentage" class="text-center" name="AdvertisementPercentage" min="0" step="1" max="100">
+                            <div class="i">
+                              <i class="fa-solid fa-percent" title="percent Icon"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message_AdvertisementPercentage"></small>
+                        </div>
+                    </div>
+										<div class="input-div six">
+                        <div>
+                            <h5>Advertisement Image</h5>
+                            <input type="file" id="AdvertisementImage" name="AdvertisementImage" accept="image/*" value="">
+														<label for="AdvertisementImage" id="AdvertisementImageLabel">Choose a Image
+															<i class="fa-solid fa-plus"></i>
+														</label>
+                            <div class="i">
+                              <i class="fa-solid fa-image" title="Image Icon"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message_AdvertisementImage"></small>
+                        </div>
+                    </div>
+                    <div class="input-div seven">
+                        <div>
+                            <h5>Advertisement Content</h5>
+                            <textarea id="AdvertismentContent" name="AdvertismentContent" cols="45"
+                            rows="10" maxlength="350" onkeyup="charactersCountContentAd()" spellcheck="false"
+                            placeholder="Please Enter The Advertisment Content" dir="ltr"></textarea>
+                            <div class="i">
+                              <i class="fa-solid fa-audio-description" title="Advertisement Icon"></i>
+                            </div>
+                            <br>
+                            <span id="charactersCountAd">350 / 0 (The maximum Limit 350 Characters)</span>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message_AdvertismentContent"></small>
+                        </div>
+                    </div>
+										<hr>
+                    <div class="input-div eight">
+                        <div>
+                            <h5>Simpliefied Content</h5>
+                            <textarea id="Ads_Simplified_Content" name="Ads_Simplified_Content" cols="45"
+                            rows="5" maxlength="150" onkeyup="charactersCount()" spellcheck="false"
+                            placeholder="Please Enter The Simpliefied Content" dir="ltr"></textarea>
+                            <div class="i">
+                              <i class="fa-solid fa-notes-medical" title="Advertisement Icon"></i>
+                            </div>
+                            <br>
+                            <span id="charactersCountNote">150 / 0 (The maximum Limit 150 Characters)</span>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message_Ads_Simplified_Content"></small>
+                        </div>
+                    </div>
+          </div>
+          <div class="modal-footer">
+            <div class="modal_create">
+              <input type="submit" value="Send" class="btn_create">
+              <div class="i">
+                <i class="fa-solid fa-paper-plane" title="Icon Create"></i>
+              </div>
+            </div>
+          </form>
+            <button data-bs-dismiss="modal" class="btn_close" title="Close (Alt + X)" id="btnClose">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+		<!-- Advertisement Subscribe End  -->
+		<!-- ----------------------- -->
+
+		<!-- My Advertisements Start  -->
+		<section class="myAds">
+			<div class="table_responsive">
+				<h1>My Advertisements</h1>
+				<hr>
+				<table id="t_dis">
+					<thead>
+						<tr>
+							<th id="oid">ID</th>
+							<th id="or">percent</th>
+							<th id="oc">Discripion</th>
+							<th id="od">start date</th>
+							<th id="oe">end date</th>
+							<th id="os">more Discripion</th>
+						</tr>
+						</thead>
+                       
+                     
+				</table>
+			</div>
+		</section>
+		<!-- My Advertisements End  -->
+		<!-- ----------------------- -->
+		<!-- Loader Start -->
+		<!-- <div class="loader-container">
+			<img src="../loaders/Advertisements_Page/4.gif" alt="">
+		</div> -->
+		<!-- Loader End -->
+		<!-- ----------------------- -->
+					<!-- Link BootStrap File Js -->
+		<script src="../Js/js_Bootstrap.js"></script>
+    <script src="../Js/Restaurant_Advertisements_Page.js"></script>
+    <script type="module" src="../Js/Restaurant_Advertisements_Page_M.js"></script>
+    <script src="../Js/Common_For_All.js"></script>
+		<script>
+			var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+			var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+					return new bootstrap.Popover(popoverTriggerEl)
+			})
+	</script>
+  </body>
+</html

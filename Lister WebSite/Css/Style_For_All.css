@@ -1,0 +1,789 @@
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    /* Declare Start */
+    
+     :root {
+        /* Colors Light Mode */
+        --bodyColor: #e4e9f7;
+        --sidebarColor: #fff;
+        --primaryColor: #695cfe;
+        --primaryColorLight: #f6f5ff;
+        --toggleColor: #dddd;
+        --textColors: #707070;
+        --mainColor: #c4c4c4;
+        --subColor: #d2d2d2;
+        --subColor2: #1d1d1d;
+        --subColor3: #818181;
+        --buttonColor: #21A0CD;
+        /* Trasnsition */
+        --tran-02: all 0.2s ease;
+        --tran-03: all 0.3s ease;
+        --tran-04: all 0.4s ease;
+        --tran-05: all 0.5s ease;
+        /* width */
+        --leftNormal-2: 1.4vw;
+        --leftNormal-12: 19.1vw;
+        --leftClose-2: 6.5vw;
+        --leftClose-12: 7.3vw;
+    }
+    /* Declare End */
+    /* ---------------------- */
+    
+    .dark-theme {
+        /* Colors Dark Mode */
+        --bodyColor: #000106;
+        --sidebarColor: #000106;
+        --primaryColor: rgb(135, 135, 135);
+        --primaryColorLight: grey;
+        --toggleColor: #aaa;
+        --textColors: #333;
+    }
+    
+    body {
+        height: 100vh;
+        background-color: var(--bodyColor);
+    }
+    /* SideBar Start */
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 16.3vw;
+        padding: 0.7vw 1vw;
+        background-color: var(--sidebarColor);
+        transition: var(--tran-05);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    html[dir="rtl"] .sidebar {
+        right: 0;
+    }
+    
+    .sidebar header {
+        position: relative;
+    }
+    
+    .sidebar header .image-text .text {
+        font-size: 1.3vw;
+        font-weight: 500;
+        color: var(--textColors);
+        font-family: "Times New Roman", Times, serif;
+        transition: var(--tran-03);
+        white-space: nowrap;
+        opacity: 1;
+    }
+    
+    .sidebar .menu-bar .menu li a span,
+    .sidebar .menu-bar .bottom-navigation li a span {
+        font-size: 1.2vw;
+    }
+    
+    .sidebar header i.toggle {
+        position: absolute;
+        top: 50%;
+        height: 1.8vw;
+        width: 1.8vw;
+        background-color: var(--primaryColor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: var(--sidebarColor);
+        font-size: 1.6vw;
+        cursor: pointer;
+        border: 0.2vw solid white;
+        transform: translateY(-50%) rotate(180deg);
+        transition: var(--tran-03);
+    }
+    
+    html[dir="ltr"] .sidebar.close header i.toggle {
+        right: -2.5vw;
+    }
+    
+    html[dir="ltr"] .sidebar header i.toggle {
+        right: -4vw;
+    }
+    
+    html[dir="rtl"] .sidebar.close header i.toggle {
+        left: -2.5vw;
+    }
+    
+    html[dir="rtl"] .sidebar header i.toggle {
+        left: -4vw;
+    }
+    
+    .sidebar li {
+        height: 3.6vw;
+        width: 12vw;
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    .sidebar.close li {
+        height: 3.6vw;
+        width: 4vw;
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    html[dir="ltr"] .sidebar li .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4vw;
+        width: 3.3vw;
+        left: 0.3vw;
+        position: relative;
+    }
+    
+    html[dir="rtl"] .sidebar li .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4vw;
+        width: 3.3vw;
+        right: 0.3vw;
+        position: relative;
+    }
+    
+    .sidebar li .text,
+    .sidebar li .icon,
+    .extension-tool li .ex-icon {
+        color: var(--textColors);
+        transition: var(--tran-03);
+    }
+    
+    html[dir="ltr"] .sidebar li:hover {
+        color: var(--sidebarColor);
+        left: 0.2vw;
+        transition: var(--tran-03);
+        position: relative;
+    }
+    
+    html[dir="rtl"] .sidebar li:hover {
+        color: var(--sidebarColor);
+        right: 0.2vw;
+        transition: var(--tran-03);
+        position: relative;
+    }
+    
+    .sidebar li a,
+    .extension-tool li a {
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        border-radius: 0.4vw;
+        transition: var(--tran-04);
+        outline: none;
+    }
+    
+    #PFP_Sidebar_Header {
+        height: 20%;
+    }
+    
+    .sidebar .menu-bar {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    #Mytest_d {
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .sidebar .menu-bar .sidebar #PFP_Sidebar_Logout_Part {
+        height: 12.5%;
+    }
+    
+    .sidebar .home-link:hover.home-link:after,
+    .sidebar .advertisements-link:hover.advertisements-link:after,
+    .sidebar .settings-link:hover.settings-link:after,
+    .sidebar .menu-link:hover.menu-link:after,
+    .sidebar .order-link:hover.order-link:after,
+    .sidebar .mail-link:hover.mail-link:after {
+        border-color: transparent var(--textColors) transparent transparent;
+        border-width: 1vw;
+        transform: skew(1);
+        transition: var(--tran-03);
+    }
+    
+    .sidebar .menu-bar .bottom-navigation li {
+        position: relative;
+    }
+    
+    .sidebar .menu-bar .bottom-navigation li a .image img {
+        width: 2.1vw;
+        height: 2.1vw;
+        border-radius: 50%;
+        position: absolute;
+        transition: var(--tran-04);
+        right: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    html[dir="ltr"] .sidebar .menu-bar .bottom-navigation li a .image img {
+        right: 10%;
+    }
+    
+    html[dir="rtl"] .sidebar .menu-bar .bottom-navigation li a .image img {
+        left: 10%;
+    }
+    
+    .sidebar .menu-bar .bottom-navigation li a:hover .image img {
+        transition: var(--tran-05);
+    }
+    
+    html[dir="ltr"] .sidebar .menu-bar .bottom-navigation li a:hover .image img {
+        right: 20%;
+    }
+    
+    html[dir="rtl"] .sidebar .menu-bar .bottom-navigation li a:hover .image img {
+        left: 20%;
+    }
+    
+    #logout .modal-dialog .modal-content .modal-body span {
+        text-align: center;
+        font-size: 1.6vw;
+    }
+    
+    #logout .modal-dialog .modal-content .modal-footer button.logout {
+        background-image: linear-gradient(to right, #e74c3c, #eb3521, #ee240e);
+    }
+    
+    .sidebar li.two a i:first-child {
+        display: none;
+    }
+    
+    .sidebar li.two a i:nth-child(2) {
+        position: relative;
+        left: -0.3vw;
+    }
+    
+    .sidebar li.two a:hover i:first-child {
+        display: block;
+        position: relative;
+        left: 1.4vw;
+    }
+    
+    .sidebar li.two a:hover i:nth-child(2) {
+        display: none;
+    }
+    
+    .sidebar li:hover,
+    .extension-tool li a:hover {
+        background-color: var(--primaryColor);
+    }
+    
+    html[dir="ltr"] .sidebar li:hover,
+    html[dir="ltr"] .extension-tool li a:hover {
+        border-radius: 1vw 0.4vw;
+    }
+    
+    html[dir="rtl"] .sidebar li:hover,
+    html[dir="rtl"] .extension-tool li a:hover {
+        border-radius: 0.4vw 1vw;
+    }
+    /* SideBar Close */
+    
+    .sidebar.close {
+        width: 5.5vw;
+        z-index: 1000;
+    }
+    
+    .sidebar.close .text,
+    .sidebar.close .text .name {
+        opacity: 0;
+    }
+    
+    .sidebar.close header .toggle {
+        transform: translateY(-50%);
+        transition: var(--tran-03);
+    }
+    
+    .sidebar.close header .toggle {
+        transform: translateY(-50%);
+        transition: var(--tran-03);
+    }
+    
+    .sidebar.close .menu-bar .menu li.search-box input {
+        display: none;
+    }
+    
+    .sidebar.close .bottom-navigation li a .image img {
+        display: none;
+    }
+    /* SideBar End */
+    /* ---------------------- */
+    /* Souce & Welcome Start */
+    
+    .source-welcome {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        left: 19.1vw;
+        top: 1.4vw;
+        margin-bottom: 2.1vw;
+        width: calc(100% - 19.1vw);
+        transition: var(--tran-05);
+    }
+    
+    .source-welcome .source a {
+        font-size: 1.4vw;
+        text-decoration: none;
+        color: var(--textColors);
+        transition: var(--tran-03);
+    }
+    
+    .source-welcome .source a:hover {
+        color: var(--primaryColor);
+        transition: var(--tran-03);
+    }
+    
+    .source-welcome .source span {
+        color: var(--primaryColor);
+        font-size: 1.7vw;
+    }
+    
+    .source-welcome .welcome .text {
+        font-size: 1.7vw;
+        color: var(--textColors);
+        margin-right: 0.3vw;
+    }
+    
+    .source-welcome .welcome .name {
+        font-size: 1.4vw;
+        color: var(--primaryColor);
+        margin-right: 0.3vw;
+    }
+    
+    .sidebar.close~.source-welcome {
+        left: 7.3vw;
+        width: calc(100% - 7.3vw);
+        top: 1.4vw;
+    }
+    /* Souce & Welcome End */
+    /* ---------------------- */
+    /* Top Header Start */
+    
+    .top-header #toggle_Extenstions_Tool {
+        width: 15vw;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 20px;
+    }
+    
+    html[dir="ltr"] .top-header #toggle_Extenstions_Tool {
+        right: 7%;
+    }
+    
+    html[dir="rtl"] .top-header #toggle_Extenstions_Tool {
+        left: 7%;
+    }
+    /* Top Header End */
+    /* ---------------------- */
+    
+    .extension-tool li {
+        height: 3.6vw;
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    .extension-tool li .ex-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4vw;
+        width: 3.8vw;
+        position: relative;
+    }
+    
+    .extension-tool li .ex-icon {
+        color: var(--textColors);
+        transition: var(--tran-03);
+    }
+    
+    .extension-tool li a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        border-radius: 0.4vw;
+        transition: var(--tran-04);
+        outline: none;
+    }
+    
+    .extension-tool li:hover {
+        background-color: var(--primaryColor);
+        border-radius: 1vw 0.4vw;
+    }
+    
+    .extension-tool {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 16vw;
+        background-color: var(--sidebarColor);
+        transition: var(--tran-05);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    html[dir="ltr"] .extension-tool {
+        right: 0;
+        border-radius: 0.8vw 0.4vw 0.4vw 0.8vw;
+    }
+    
+    html[dir="rtl"] .extension-tool {
+        left: 0;
+        border-radius: 0.4vw 0.8vw 0.8vw 0.4vw;
+    }
+    
+    .extension-tool li .ex-icon {
+        transition: var(--tran-05);
+    }
+    
+    .extension-tool li:hover a i.ex-icon {
+        color: white;
+        transform: rotate(360deg);
+        transition: var(--tran-05);
+    }
+    /* Sticky Note Start */
+    /* ********************************************************** */
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Add_Note_Form {
+        display: flex;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body input,
+    button {
+        appearance: none;
+        border: none;
+        outline: none;
+        background: none;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Add_Note_Input {
+        width: 20vw;
+        background-color: var(--textColors);
+        padding: 1.1vw;
+        border-radius: 1.1vw;
+        /* margin-right: 1.1vw; */
+        color: var(--primaryColorLight);
+        font-size: 1.4vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Add_Note_Input::placeholder {
+        color: var(--primaryColorLight);
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Add_Note_Button {
+        color: var(--sidebarColor);
+        background-color: var(--textColors);
+        border-radius: 1.1vw;
+        padding: 1.1vw;
+        transition: 0.4s;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Add_Note_Button:hover {
+        opacity: 0.8;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Add_Note_Button:active {
+        opacity: 0.6;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .PFP_Popup_Window_Sticky_Note_Task_List {
+        padding: 1.1vw;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .PFP_Popup_Window_Sticky_Note_Task_List h2 {
+        font-size: 1.7vw;
+        color: var(--textColors);
+        margin-bottom: 1.1vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Container_Tasks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Container_Tasks .task {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--textColors);
+        padding: 1.1vw;
+        border-radius: 1.1vw;
+        margin-bottom: 1.1vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .content {
+        flex: 1 1 0%;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .content .text {
+        color: white;
+        font-size: 1.4vw;
+        width: 100%;
+        display: block;
+        transition: 0.4s;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .content .text:not(:read-only) {
+        color: black;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .actions {
+        display: flex;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .actions button {
+        margin: 0 0.5vw;
+        font-size: 1.3vw;
+        font-weight: 700;
+        transition: 0.4s;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .actions button:hover {
+        opacity: 0.8;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .actions button:active {
+        opacity: 0.6;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .actions .edit {
+        background-color: white;
+        color: var(--textColors);
+        border-radius: 0.7vw;
+        padding: 0.1vw 0.3vw;
+        margin-left: 1.4vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .task .actions .delete {
+        background-color: white;
+        color: var(--textColors);
+        border-radius: 0.7vw;
+        padding: 0.1vw 0.3vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body #PFP_Popup_Window_Sticky_Note_Clear_Button {
+        display: none;
+        margin: 1vw auto 1vw;
+        background-color: var(--textColors);
+        color: var(--bodyColor);
+        padding: 0.3vw 1.4vw;
+        border-radius: 0.7vw;
+    }
+    
+    #PFP_Popup_Window_Sticky_Note_Top {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    #PFP_Popup_Window_Sticky_Note_Top_Button_Close,
+    #PFP_Popup_Window_Sticky_Note_Add_Note_Input,
+    #PFP_Popup_Window_Sticky_Note_Add_Note_Button {
+        margin: 0 !important;
+    }
+    
+    #PFP_Popup_Window_Sticky_Note_Add_Note_Form {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* Sticky Note End */
+    /* *********************************************************************************************************************************************************************************************************************** */
+    /* ---------------------- */
+    /* Todo List Start */
+    
+    #PFP_Popup_Window_To_Do_List_Top_Button_Close {
+        margin: 0 !important;
+    }
+    
+    #PFP_Popup_Window_To_Do_List_Top {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo {
+        width: 29.2vw;
+        margin: 1.4vw auto;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo #PFP_Popup_Window_To_Do_List_Form {
+        background-color: #dddd;
+        border-radius: 0.4vw;
+        padding: 0.7vw;
+        display: flex;
+        align-items: center;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo #PFP_Popup_Window_To_Do_List_Form .input {
+        padding: 0.7vw;
+        border: 0.07vw solid #ddd;
+        border-radius: 0.4vw;
+        flex: 1;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo #PFP_Popup_Window_To_Do_List_Form .input::placeholder {
+        color: var(--textColors);
+        font-size: 1.3vw;
+        font-weight: 500;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo #PFP_Popup_Window_To_Do_List_Form .input:focus {
+        outline: none;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo #PFP_Popup_Window_To_Do_List_Form .add {
+        border: none;
+        background-color: #707070;
+        color: white;
+        padding: 0.7vw;
+        border-radius: 0.4vw;
+        margin-left: 0.7vw;
+        cursor: pointer;
+        width: 7vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo h2 {
+        font-size: 1.7vw;
+        color: var(--textColors);
+        margin: 1.1vw 0;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo .tasks {
+        margin-top: 1.4vw;
+        border-radius: 0.4vw;
+        padding: 1.4vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task {
+        background-color: #b3b3b3;
+        padding: 1.4vw 0.7vw;
+        border-radius: 0.4vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s;
+        cursor: pointer;
+        border: 0.07vw solid #ccc;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task:not(:last-child) {
+        margin-bottom: 1vw;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task:hover {
+        background-color: #f7f7f7;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task.done {
+        opacity: 0.5;
+        background-color: rgb(11, 116, 11);
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task span {
+        font-weight: bold;
+        font-size: 1vw;
+        background-color: rgb(12, 12, 12);
+        color: white;
+        padding: 0.2vw 0.4vw;
+        border-radius: 0.8vw;
+        cursor: no-drop;
+    }
+    
+    .modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task.done {
+        color: white;
+    }
+    
+    .modalo .modal-dialog .modal-content .modal-body .container-todo .tasks .task.done span {
+        background-color: red;
+    }
+    /* Todo List End */
+    /* ---------------------- */
+    
+    .btn_close {
+        height: 3.6vw;
+        width: 40%;
+        border: none;
+        color: #fff;
+        transition: 0.5s;
+        font-size: 1.4vw;
+        margin: 0 auto;
+        border-radius: 1.8vw;
+        display: inline-block;
+        background-size: 200%;
+        background-image: linear-gradient( to right, var(--textColors), #424141, #080808);
+    }
+    
+    .btn_close:hover {
+        background-position: right;
+    }
+    
+    .btn-close:focus {
+        box-shadow: none;
+    }
+    /* Top Header Start */
+    
+    .sidebar.close~.top-header {
+        width: calc(100% - 4.5vw);
+    }
+    
+    html[dir="ltr"] .sidebar.close~.top-header {
+        left: 4.5vw;
+    }
+    
+    html[dir="rtl"] .sidebar.close~.top-header {
+        right: 4.5vw;
+    }
+    
+    .top-header {
+        position: relative;
+        width: calc(100% - 16.4vw);
+        transition: var(--tran-05);
+        height: 5.1vw;
+        background-color: black;
+        border-bottom: 0.1vw solid #5c6dc0;
+    }
+    
+    html[dir="ltr"] .top-header {
+        left: 16.4vw;
+    }
+    
+    html[dir="rtl"] .top-header {
+        right: 16.4vw;
+    }
+    
+    .sidebar.close li a span {
+        display: none;
+    }

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="PFP_Admin_Complaints_Page" class="PFP_Admin_Pages">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Think The keywords Of The meta content for The Website Project Suitable Page -->
+    <meta name="keywords" content="">
+    <!-- Think The Content Of The meta content for The Website Project Suitable Page -->
+    <meta name="description" content="">
+    <title id="PFP_Admin_Complaints_Title">Complaints</title>
+    <link rel="icon" href="../Icons/Delivery_Man_1.ico">
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="../Css/all.min.css">
+    <!-- Render All Element Normalize -->
+    <link rel="stylesheet" href="../Css/Normalize.css">
+    <!-- Link BootStrap File Css -->
+    <link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+    <!-- Link Subscribe File Css -->
+    <link rel="stylesheet" href="../Css/Style_For_All.css">
+    <!-- Link Admin File Css -->
+    <link rel="stylesheet" href="../Css/Style_For_All_Admin_pages.css">
+    <!-- Link Main File Css -->
+    <link rel="stylesheet" href="../Css/Style_Admin_Complaints_page.css">
+</head>
+
+<body>
+    <!-- Navigation Bar Start -->
+    <nav class="sidebar close">
+        <header id="PFP_Sidebar_Header">
+            <div class="image-text">
+                <img src="../Picture/test.jpg">
+                <h2 id="PFP_Admin_Full_Name">Khaldoun Alhaj</h2>
+            </div>
+            <i class="fa-solid fa-angle-right toggle" title="Let's Go ( Alt + O )" id="PFP_Toggle"></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu" id="Mytest_d">
+                <li class="navigation-links home-link" title="Home Page ( Alt + H )" id="PFP_Admin_Home_T">
+                    <a href="Admin_Home_Page.html">
+                        <i class="fa-solid fa-home icon"></i>
+                        <span class="text nav-text home-text" id="PFP_Admin_Home_A">Home Page</span>
+                    </a>
+                </li>
+                <li class="navigation-links Delivery-Men-link" title="Delivery Men ( Alt + D )" id="PFP_Delivery_Men_T">
+                    <a href="Admin_Delivery_Men_Page.html">
+                        <i class="fa-solid fa-motorcycle icon"></i>
+                        <span class="text nav-text menu-text" id="PFP_Delivery_Men_A">Delivery Men</span>
+                    </a>
+                </li>
+                <li class="navigation-links Customers-link" title="Customers ( Shift + Alt + C )" id="PFP_Customers_T">
+                    <a href="Admin_Customers_Page.html">
+                        <i class="fa-solid fa-user icon"></i>
+                        <span class="text nav-text order-text" id="PFP_Customers_A">Customers</span>
+                    </a>
+                </li>
+                <li class="navigation-links Old-Admins-link" title="Admins ( Shift + Alt + A ) " id="PFP_Admins_T">
+                    <a href="Admin_Admins_Page.html">
+                        <i class="fa-solid fa-address-card icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Admins_A">Admins</span>
+                    </a>
+                </li>
+                <li class="navigation-links Restaurants-link" title="Restaurants ( Alt + R )" id="PFP_Restaurants_T">
+                    <a href="Admin_Restaurants_Page.html">
+                        <i class="fa-solid fa-utensils icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Restaurants_A">Restaurants</span>
+                    </a>
+                </li>
+                <li class="navigation-links Advertisements-link" title="Advertisements ( Ctrl + Alt + A )" id="PFP_Advertisements_T">
+                    <a href="Admin_Advertisements_Page.html">
+                        <i class="fa-solid fa-rectangle-ad icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Advertisements_A">Advertisements</span>
+                    </a>
+                </li>
+                <li class="navigation-links Complaints-link" title="Complaints ( Ctrl + Alt + C )" id="PFP_Complaints_T">
+                    <a href="Admin_Complaints_page.html">
+                        <i class="fa-solid fa-comments icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Complaints_A">Complaints</span>
+                    </a>
+                </li>
+                <li class="navigation-links settings-link" title="Settings ( Alt + S )" id="PFP_Admin_Settings_T">
+                    <a href="Admin_Settings_Page.html">
+                        <i class="fa-solid fa-gear icon"></i>
+                        <span class="text nav-text settings-text" id="PFP_Admin_Settings_A">Settings</span>
+                    </a>
+                </li>
+            </div>
+            <div class="bottom-navigation" data-bs-toggle="modal" data-bs-target="#logout" id="PFP_Sidebar_Logout_Part">
+                <li class="logout-link" title="Logout" id="PFP_Logout_T">
+                    <a href="">
+                        <i class="fa-solid fa-right-from-bracket icon"></i>
+                        <span class="text nav-text logout-text" id="PFP_Logout_A">Logout</span>
+                        <span class="image" title="Personal Image">
+								<img src="../images/Logo_User.png" alt="Personal Image">
+						</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar End -->
+    <!-- ----------------------- -->
+    <!-- Button trigger modal -->
+    <div class="modal fade" id="logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Log Out</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span id="PFP_Log_Out_Warning">Are you sure you want to log out of the website</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn_close" id="Btn_close">Close</button>
+                    <button class="btn_close logout" onclick="logout()" id="PFP_Log_out">Log out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Start -->
+    <header class="top-header">
+        <!-- <div class="image-text">
+        </div> -->
+        <button id="toggle_Extenstions_Tool" class="btn btn-secondary" onclick="ToggleExtenstionTool();" tabindex="2">Hide Extension Tools</button>
+    </header>
+    <!-- Header End -->
+    <!-- ----------------------- -->
+    <main id="PFP_Admin_Complaints_Main_Tag">
+        <div class="container-xxl">
+            <div class="row" id="c_comp">
+                
+            </div>
+        </div>
+    </main>
+    <script src="../Js/js_Bootstrap.js"></script>
+    <!-- <script type="module" src="../Js/Java_Script_For_All.js"></script> -->
+    <script type="module" src="../Js/Js_Admin_Complaints_Page.js"></script>
+</body>
+
+</html>

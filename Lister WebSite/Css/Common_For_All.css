@@ -1,0 +1,788 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Declare Start */
+
+:root {
+    /* Colors Light Mode */
+    --bodyColor: white;
+    --sidebarColor: #fff;
+    --primaryColor: #695cfe;
+    --primaryColorLight: #f6f5ff;
+    --toggleColor: #dddd;
+    --textColors: #707070;
+    --mainColor: #c4c4c4;
+    --subColor: #d2d2d2;
+    --subColor2: #1d1d1d;
+    --subColor3: #818181;
+    --buttonColor: #21A0CD;
+    /* Trasnsition */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+    /* width */
+    --leftNormal-2: 1.4vw;
+    --leftNormal-12: 19.1vw;
+    --leftClose-2: 6.5vw;
+    --leftClose-12: 7.3vw;
+}
+
+
+/* Declare End */
+
+
+/* ---------------------- */
+
+.dark-theme {
+    /* Colors Dark Mode */
+    --bodyColor: #000106;
+    --sidebarColor: #000106;
+    --primaryColor: rgb(135, 135, 135);
+    --primaryColorLight: grey;
+    --toggleColor: #aaa;
+    --textColors: #333;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.7vw;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 0.3vw;
+    box-shadow: inset 0 0 0.7vw rgba(0, 0, 0, 0.25);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.3vw;
+    background-color: var(--subColor2);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--mainColor);
+  }
+
+body {
+    height: 100vh;
+    background-color: var(--bodyColor);
+}
+
+
+/* SideBar Start */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 16.3vw;
+    padding: 0.7vw 1vw;
+    background-color: var(--sidebarColor);
+    transition: var(--tran-05);
+    z-index: 1000;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .image-text .image {
+    min-width: 4.3vw;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .image-text .image img {
+    width: 2.9vw;
+    border-radius: 0.4vw;
+    transition: var(--tran-03);
+}
+
+.sidebar header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar header .image-text .header-text .name {
+    font-weight: 700;
+    font-size: 1.7vw;
+}
+
+.sidebar header i.toggle {
+    position: absolute;
+    top: 50%;
+    right: -1.8vw;
+    height: 1.8vw;
+    width: 1.8vw;
+    background-color: var(--primaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebarColor);
+    font-size: 1.6vw;
+    cursor: pointer;
+    border: 0.2vw solid white;
+    transform: translateY(-50%) rotate(180deg);
+    transition: var(--tran-03);
+}
+
+.sidebar li,
+.extension-tool li {
+    height: 3.6vw;
+    margin-top: 0.7vw;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon,
+.extension-tool li .ex-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4vw;
+    min-width: 4.3vw;
+    left: -0.3vw;
+    position: relative;
+}
+
+
+.sidebar li .text,
+.sidebar li .icon,
+.extension-tool li .ex-icon {
+    color: var(--textColors);
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebarColor);
+    left: 0;
+    transition: var(--tran-03);
+    position: relative;
+}
+
+.sidebar li a,
+.extension-tool li a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4vw;
+    transition: var(--tran-04);
+    outline: none;
+}
+
+.sidebar .menu-bar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sidebar .home-link:hover.home-link:after,
+.sidebar .advertisements-link:hover.advertisements-link:after,
+.sidebar .settings-link:hover.settings-link:after,
+.sidebar .menu-link:hover.menu-link:after,
+.sidebar .order-link:hover.order-link:after,
+.sidebar .mail-link:hover.mail-link:after {
+    border-color: transparent var(--textColors) transparent transparent;
+    border-width: 1vw;
+    transform: skew(1);
+    transition: var(--tran-03);
+}
+
+.sidebar .menu-bar .bottom-navigation li {
+    position: relative;
+}
+
+.sidebar .menu-bar .bottom-navigation li a .image img {
+    width: 2.1vw;
+    height: 2.1vw;
+    border-radius: 50%;
+    position: absolute;
+    transition: var(--tran-04);
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sidebar .menu-bar .bottom-navigation li a:hover .image img {
+    transition: var(--tran-05);
+    right: 20%;
+}
+
+#logout .modal-dialog .modal-content .modal-body span {
+    text-align: center;
+    font-size: 1.6vw;
+}
+
+#logout .modal-dialog .modal-content .modal-footer button.logout,
+#deleteProduct .modal-dialog .modal-content .modal-footer button.logout {
+    background-image: linear-gradient(to right, #e74c3c, #eb3521, #ee240e);
+}
+
+.sidebar li.two a i:first-child {
+    display: none;
+}
+
+.sidebar li.two a i:nth-child(2) {
+    position: relative;
+    left: -0.3vw;
+}
+
+.sidebar li.two a:hover i:first-child {
+    display: block;
+    position: relative;
+    left: 1.4vw;
+}
+
+.sidebar li.two a:hover i:nth-child(2) {
+    display: none;
+}
+
+.sidebar li a:hover,
+.extension-tool li a:hover {
+    background-color: var(--primaryColor);
+    border-radius: 1vw 0.4vw;
+}
+
+
+/* SideBar Close */
+
+.sidebar.close {
+    width: 5.5vw;
+    z-index: 1000;
+}
+
+.sidebar.close .image-text .image img {
+    margin-left: 0.5vw;
+    transition: var(--tran-03);
+}
+
+.sidebar.close .text,
+.sidebar.close .text .name {
+    opacity: 0;
+}
+
+.sidebar.close header .toggle {
+    transform: translateY(-50%);
+    transition: var(--tran-03);
+}
+
+.sidebar.close .bottom-navigation li a .image img {
+    display: none;
+}
+
+.sidebar.close li a span {
+    display: none;
+}
+
+/* SideBar End */
+
+
+/* ---------------------- */
+
+
+/* Top Header Start */
+
+.top-header {
+    position: relative;
+    left: 16.4vw;
+    width: calc(100% - 16.4vw);
+    transition: var(--tran-05);
+    height: 5.1vw;
+    background-color: black;
+    border-bottom: 0.1vw solid #5c6dc0;
+    /* width: 100%; */
+}
+
+.sidebar.close~.top-header {
+    left: 4.5vw;
+    width: calc(100% - 4.5vw);
+}
+
+.top-header .image-text .image img {
+    width: 3.5vw;
+    border-radius: 50%;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--tran-03);
+    border: 0.2vw solid var(--textColors);
+    padding: 3px;
+}
+
+.top-header .image-text .image img:hover {
+    border-radius: 0.4vw;
+    transition: var(--tran-03);
+}
+
+.top-header #toggle_Extenstions_Tool {
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+
+}
+
+/* Top Header End */
+/* ---------------------- */
+
+/* SideBar End */
+/* ---------------------- */
+
+
+/* Extension Start */
+
+.extension-tool {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 3.6vw;
+    border-radius: 0.8vw 0.4vw 0.4vw 0.8vw;
+    /* border-radius: 7.3vw; */
+    background-color: var(--sidebarColor);
+    transition: var(--tran-05);
+    z-index: 1000;
+}
+
+.extension-tool li .ex-icon {
+    transition: var(--tran-05);
+}
+
+.extension-tool li:hover a i.ex-icon {
+    color: white;
+    transform: rotate(360deg);
+    transition: var(--tran-05);
+}
+
+
+/* Extension End */
+
+
+/* ---------------------- */
+
+
+/* Souce & Welcome Start */
+
+.source-welcome {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 19.1vw;
+    top: 1.4vw;
+    margin-bottom: 2.1vw;
+    width: calc(100% - 19.1vw);
+    transition: var(--tran-05);
+}
+
+.source-welcome .source a {
+    font-size: 1.4vw;
+    text-decoration: none;
+    color: var(--textColors);
+    transition: var(--tran-03);
+}
+
+.source-welcome .source a:hover {
+    color: var(--primaryColor);
+    transition: var(--tran-03);
+}
+
+.source-welcome .source span {
+    color: var(--primaryColor);
+    font-size: 1.7vw;
+}
+
+.source-welcome .welcome .text {
+    font-size: 1.7vw;
+    color: var(--textColors);
+    margin-right: 2vw;
+}
+
+.sidebar.close~.source-welcome {
+    left: 7.3vw;
+    width: calc(100% - 7.3vw);
+    top: 1.4vw;
+}
+
+
+/* Souce & Welcome End */
+
+
+/* ---------------------- */
+
+/* Up Arrow Start */
+
+.up-arrow img {
+  transition: var(--tran-03);
+  cursor: pointer;
+  position: fixed;
+  width: 3.5vw;
+  bottom: 1.5vw;
+  right: -4.5vw;
+  z-index: 100;
+}
+
+.up-arrow.show img {
+    right: 1vw;
+    transition: var(--tran-02);
+}
+
+/* Up Arrow End */
+/* ---------------------- */
+
+
+/* Loader Start  */
+
+
+/* 
+.loader-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color:rgb(77, 46, 190);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loader-container img {
+  width: 40.9vw;
+}
+
+.loader-container.fade-out {
+  top: 100%;
+  opacity: 0;
+} */
+
+
+/* Loader End  */
+
+
+/* ---------------------- */
+
+.btn_close {
+    height: 3.6vw;
+    width: 40%;
+    border: none;
+    color: #fff;
+    transition: 0.5s;
+    font-size: 1.4vw;
+    margin: 0 auto;
+    border-radius: 1.8vw;
+    display: inline-block;
+    background-size: 200%;
+    /* background-image: linear-gradient(to right, #e74c3c, #eb3521, #ee240e); */
+    background-image: linear-gradient( to right, var(--textColors), #424141, #080808);
+}
+
+.btn_close:hover {
+    background-position: right;
+}
+
+.btn-close:focus {
+    box-shadow: none;
+}
+
+
+/* Sticky Note Start */
+
+.modal .modal-dialog .modal-content .modal-body #new-task-form {
+    display: flex;
+}
+
+.modal .modal-dialog .modal-content .modal-body input,
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.modal .modal-dialog .modal-content .modal-body #new-task-input {
+    /* flex: 1; */
+    width: 25.6vw;
+    background-color: var(--textColors);
+    padding: 1.1vw;
+    border-radius: 1.1vw;
+    margin-right: 1.1vw;
+    color: var(--primaryColorLight);
+    font-size: 1.4vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body #new-task-input::placeholder {
+    color: var(--primaryColorLight);
+}
+
+.modal .modal-dialog .modal-content .modal-body #new-task-submit {
+    color: var(--sidebarColor);
+    background-color: var(--textColors);
+    border-radius: 1.1vw;
+    padding: 1.1vw;
+    transition: 0.4s;
+}
+
+.modal .modal-dialog .modal-content .modal-body #new-task-submit:hover {
+    opacity: 0.8;
+}
+
+.modal .modal-dialog .modal-content .modal-body #new-task-submit:active {
+    opacity: 0.6;
+}
+
+.modal .modal-dialog .modal-content .modal-body main {
+    /* flex: 1 1 0%;
+	max-width: 58.5vw;
+	width: 100%;
+	margin: 0 auto; */
+}
+
+.modal .modal-dialog .modal-content .modal-body .task-list {
+    padding: 1.1vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task-list h2 {
+    font-size: 1.7vw;
+    color: var(--textColors);
+    margin-bottom: 1.1vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body #tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--textColors);
+    padding: 1.1vw;
+    border-radius: 1.1vw;
+    margin-bottom: 1.1vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .content {
+    flex: 1 1 0%;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .content .text {
+    color: white;
+    font-size: 1.4vw;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .content .text:not(:read-only) {
+    color: black;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .actions {
+    display: flex;
+    margin: 0 -0.5vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .actions button {
+    margin: 0 0.5vw;
+    font-size: 1.3vw;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .actions button:hover {
+    opacity: 0.8;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .actions button:active {
+    opacity: 0.6;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .actions .edit {
+    background-color: white;
+    color: var(--textColors);
+    border-radius: 0.7vw;
+    padding: 0.1vw 0.3vw;
+    margin-left: 1.4vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body .task .actions .delete {
+    background-color: white;
+    color: var(--textColors);
+    border-radius: 0.7vw;
+    padding: 0.1vw 0.3vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body #clear-all {
+    display: none;
+    margin: 2.1vw auto 1vw;
+    background-color: var(--textColors);
+    color: var(--bodyColor);
+    padding: 0.3vw 1.4vw;
+    border-radius: 0.7vw;
+}
+
+
+/* Sticky Note End */
+
+
+/* ---------------------- */
+
+
+/* Todo List Start */
+
+.modal .modal-dialog .modal-content .modal-body .container-todo {
+    width: 29.2vw;
+    margin: 1.4vw auto;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .form {
+    background-color: #dddd;
+    /* background-color: #eee; */
+    border-radius: 0.4vw;
+    padding: 0.7vw;
+    display: flex;
+    align-items: center;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .form .input {
+    padding: 0.7vw;
+    border: 0.07vw solid #ddd;
+    border-radius: 0.4vw;
+    flex: 1;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .form .input::placeholder {
+    color: var(--textColors);
+    font-size: 1.3vw;
+    font-weight: 500;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .form .input:focus {
+    outline: none;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .form .add {
+    border: none;
+    background-color: #707070;
+    color: white;
+    padding: 0.7vw;
+    border-radius: 0.4vw;
+    margin-left: 0.7vw;
+    cursor: pointer;
+    width: 7vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo h2 {
+    font-size: 1.7vw;
+    color: var(--textColors);
+    margin: 1.1vw 0;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .tasks {
+    /* background-color: #eee; */
+    margin-top: 1.4vw;
+    border-radius: 0.4vw;
+    padding: 1.4vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task {
+    background-color: #b3b3b3;
+    padding: 1.4vw 0.7vw;
+    border-radius: 0.4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 0.07vw solid #ccc;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task:not(:last-child) {
+    margin-bottom: 1vw;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task:hover {
+    background-color: #f7f7f7;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task.done {
+    opacity: 0.5;
+    background-color: rgb(11, 116, 11);
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task span {
+    font-weight: bold;
+    font-size: 1vw;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 0.2vw 0.4vw;
+    border-radius: 0.8vw;
+    cursor: no-drop;
+}
+
+.modal .modal-dialog .modal-content .modal-body .container-todo .tasks .task.done {
+    color: white;
+}
+
+.modalo .modal-dialog .modal-content .modal-body .container-todo .tasks .task.done span {
+    background-color: red;
+}
+
+
+/* Todo List End */
+
+
+/* ---------------------- */
+
+
+/* Show Password */
+
+.container .login-container form .input-div .show,
+#PasswordEdit .modal-body  form .input-div .show {
+position: absolute;
+transition: var(--tran-03);
+}
+
+.container .login-container form .input-div.focus .show,
+#PasswordEdit .modal-body form .input-div.focus .show {
+right: 4.5vw;
+transition: var(--tran-03);
+}
+
+.container .login-container form .input-div .show i,
+#PasswordEdit .modal-body form .input-div .show i{
+font-size: 1.3vw;
+cursor: pointer;
+}
+
+.container .login-container form .input-div.focus .show i,
+#PasswordEdit .modal-body form .input-div.focus .show i{
+font-size: 1.5vw;
+}
+
+.container .login-container form .input-div .show {
+right: 4vw;
+top: 1.2vw;
+}
+
+#PasswordEdit .modal-body  form .input-div .show {
+right: 6.5vw;
+top: 4vw;
+}

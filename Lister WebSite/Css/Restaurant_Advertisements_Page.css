@@ -1,0 +1,631 @@
+body {
+  overflow-x: hidden;
+  height: 100vw;
+}
+
+.sidebar .advertisements-link:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-width: 1.4vw;
+  border-color: transparent var(--primaryColor) transparent transparent;
+  border-style: solid;
+  transition: var(--tran-04);
+}
+
+/* .source-welcome {
+  margin-bottom: 36.6vw;
+} */
+
+.container {
+  transition: var(--tran-05);
+  position: relative;
+  left: 16.2vw;
+  margin-top: 4.3vw;
+  width: calc(100% -16.2vw);
+  display: grid;
+  grid-template-columns: repeat(2,29.2vw);
+  gap: 0 4vw;
+}
+
+.sidebar.close ~ .container {
+  position: relative;
+  left: 4.3vw;
+  width: calc(100% - 4.3vw);
+  height: 21.9vw;
+  grid-template-columns: repeat(2,32.9vw);
+}
+
+.container .cards {
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(0, 0, 0, 0.2);
+  padding: 0.7vw 1.4vw;
+  border-radius: 1.8vw;
+  height: 29.2vw;
+}
+
+.container .cards.one {
+  background-color: var(--textColors);
+}
+
+.container .cards .explain h3 {
+  margin-top: 1.4vw;
+  text-align: center;
+  color: var(--toggleColor);
+}
+
+.container .cards .explain hr {
+  border: 0.07vw solid black;
+  border-radius: 1.8vw;
+  margin: 1.8vw auto 1.4vw;
+  width: 80%;
+}
+
+.container .cards .explain li {
+  margin-bottom: 1.4vw;
+  font-size: 1.3vw;
+  color: white;
+  line-height: 1.7;
+  text-align: center;
+  list-style-type: none;
+  list-style-image: url(../icons/Advertisements_Page/ads.ico);
+}
+
+.container .cards.imgage-ads {
+  background-image: url(../loaders/Advertisements_Page/1.gif);
+  background-position: center;
+  background-size: cover;
+  border: 0.1vw solid var(--textColors);
+  /* width: 36.6vw;
+  height: 29.2vw; */
+}
+
+.ad-subscribe {
+  position: absolute;
+  left: 60%;
+  transform: translateX(-50%);
+  transition: var(--tran-03);
+  background-color: var(--textColors);
+  top: 45%;
+  padding: 0.7vw 1vw;
+  border-radius: 1.8vw;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar.close ~ .ad-subscribe {
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--tran-03);
+}
+
+.ad-subscribe span {
+  font-size: 1.3vw;
+  /* font-size: 1.2vw;
+  letter-spacing: 0.07vw; */
+}
+
+.ad-subscribe span{
+  letter-spacing: 0.07vw;
+}
+
+.ad-subscribe i {
+  margin: auto 0.3vw;
+  font-size: 1.2vw;
+  color: var(--primaryColorLight);
+}
+
+
+.advertisment-subscribe .modal-dialog .modal-footer .btn_close {
+  margin: 0.5vw 1.1vw;
+  height: 3.6vw;
+  width: 40%;
+  border: none;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.4vw;
+  margin-right: 2.3vw;
+  border-radius: 1.8vw;
+  display: inline-block;
+  background-size: 200%;
+  background-image: linear-gradient(to right, #e74c3c, #eb3521, #ee240e);
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div.datetime input {
+  text-align: center;
+  font-size: 1.7vw;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div > div h5 {
+  color: var(--subColor2);
+  margin: 0.3vw 1vw;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div div .i {
+  right: 1%;
+  top: 50%;
+  transform: translateY(-20%);
+  color: var(--primaryColor);
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div div .i i {
+  padding: 0.3vw;
+  font-size: 1.9vw;
+  border-radius: 0.7vw;
+  /* border: 0.07vw solid var(--buttonColor); */
+  border: 0.07vw solid var(--primaryColor);
+  transition: all 300ms ease-in-out;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div div input:focus + .i i,
+.modal
+  .modal-dialog
+  .modal-content .modal-body
+  .input-div
+  div
+  #RestaurantAddress:focus
+  + .i
+  i,
+.modal
+  .modal-dialog
+  .modal-content .modal-body
+  .input-div
+  div
+  #AdvertismentContent:focus
+  + .i
+  i,
+  .advertisment-subscribe
+  .modal-dialog
+  .modal-content .modal-body
+  .input-div
+  div
+  #RestaurantCountry:focus
+  + .i
+  i,
+  .advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div div .i i:hover {
+  outline: none;
+  color: var(--mainColor);
+  transition: all 300ms ease-in-out;
+  border: 0.07vw solid var(--mainColor);
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div div input {
+  width: 80%;
+  color: #555;
+  outline: none;
+  font-size: 1.4vw;
+  font-family: sans-serif;
+  padding: 0.5vw 0.7vw;
+  margin: 0.7vw 1vw 1.4vw;
+  border: 0.07vw solid var(--primaryColor);
+  border-radius: 0.7vw;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body  .input-div div small {
+  width: 70%;
+  display: none;
+  font-size: 1.1vw;
+  font-style: italic;
+  color: var(--bodyColor);
+  font-family: sans-serif;
+  background-color: #e74c3c;
+  border-radius: 1.8vw 0.5vw;
+  text-align: center;
+  margin: 0.7vw auto;
+  padding: 0.3vw;
+}
+
+
+.advertisment-subscribe
+  .modal-dialog
+  .modal-content .modal-body
+  .input-div
+  div
+  textarea#AdvertismentContent,.advertisment-subscribe
+  .modal-dialog
+  .modal-content .modal-body
+  .input-div
+  div
+  textarea#Ads_Simplified_Content {
+  padding: 0.3vw;
+  resize: none;
+  border-radius: 0.7vw;
+  margin: 0.7vw 1vw 0.7vw;
+  border: 0.07vw solid var(--subColor2);
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body  .input-div div #charactersCount {
+  font-size: 1vw;
+  font-weight: 600;
+  margin-right: 1.8vw;
+  color: var(--mainColor);
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body  .input-div div input:focus,
+.advertisment-subscribe
+  .modal-dialog
+  .modal-content .modal-body
+  .input-div
+  div
+  textarea#Ads_Simplified_Content:focus,
+.advertisment-subscribe
+  .modal-dialog
+  .modal-content .modal-body
+  .input-div
+  div
+  textarea#AdvertismentContent:focus {
+  outline: none;
+  border: 0.07vw solid var(--mainColor);
+  transition: border 200ms ease-in-out;
+}
+
+
+/* #AdvertismentSubscribe .modal-body  form .five input{
+  outline: none;
+  border: none;
+  width: 80%;
+  color: #555;
+  outline: none;
+  font-size: 1.4vw;
+  font-family: sans-serif;
+  padding: 0.5vw 0.7vw;
+  margin: 0.7vw 1vw 1.4vw;
+  border: 0.07vw solid var(--primaryColor);
+  border-radius: 0.7vw;
+} */
+#AdvertismentSubscribe .modal-body  form .five .multi-selector{
+  width: 80%;
+}
+#AdvertismentSubscribe .modal-body  form .five .select-field{
+    /* border: 1px solid rgb(187, 187, 187); */
+}
+
+#AdvertismentSubscribe .modal-body  form .five .select-field,.Item,.list{
+    width: 100%;
+    background-color: white;
+    padding: 0.3rem;
+}
+
+#AdvertismentSubscribe .modal-body  form .five .list{
+    box-shadow: 0 30px 60px rgb(0,0,0,0.2);
+    display: none;
+    border-radius: 20px;
+}
+
+#AdvertismentSubscribe .modal-body  form .five .list label span {
+  font-size: 1.3vw;
+  margin-right: 20px;
+}
+
+#AdvertismentSubscribe .modal-body  form .five .list input {
+  width: 30px;
+  height: 30px;
+  margin: 0.5vw 1vw ;
+  border: 0.07vw solid var(--bodyColor);
+}
+
+#AdvertismentSubscribe .modal-body  form .five .list input:checked {
+  background-color: var(--textColors);
+}
+
+#AdvertismentSubscribe .modal-body  form .five .down-arrow{
+    font-size: 1.2rem;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+#AdvertismentSubscribe .modal-body  form .five .Item{
+    display: block;
+    padding-left: 0;
+}
+#AdvertismentSubscribe .modal-body  form .five .Item span{
+    float: right;
+    font-size: 0.6rem;
+    padding-top: 6px;
+}
+#AdvertismentSubscribe .modal-body  form .five .Item:hover{
+    background-color: aliceblue;
+}
+#AdvertismentSubscribe .modal-body  form .five .show{
+    display: block;
+}
+#AdvertismentSubscribe .modal-body  form .five .rotate180{
+    transform: rotate(-60deg);
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body  .input-div div #TablesTotal::selection {
+  background-color: var(--subColor3);
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div div .check i {
+  top: -3.6vw;
+  right: 3.6vw;
+  visibility: hidden;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div.success input,
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div.success #RestaurantAddress,
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div.success #AdvertismentContent {
+  border: 0.1vw solid #2ecc71;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div.error input,
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div.error #RestaurantAddress,
+.advertisment-subscribe .modal-dialog .modal-content .modal-body .input-div.error #AdvertismentContent {
+  border: 0.1vw solid #e74c3c;
+}
+
+/* Footer Popup Window */
+
+.advertisment-subscribe .modal-dialog .modal-footer .modal_create .i i {
+  top: 50%;
+  right: 2.1vw;
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  transform: translateY(-50%);
+  font-size: 1.3vw;
+}
+
+.advertisment-subscribe .modal-dialog .modal-footer .modal_create .btn_create {
+  width: 13vw;
+  display: inline-block;
+}
+
+hr {
+  border: 0.1vw solid var(--primaryColor);
+  margin: 1vw auto 1.4vw;
+  border-radius: 45%;
+  width: 90%;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-header .btn-close {
+  border: 0.1vw solid #4938ff;
+  border-radius: 50%;
+}
+
+.advertisment-subscribe .modal-dialog .modal-content .modal-header .btn-close:focus {
+  background-color: var(--primaryColor);
+}
+
+.modal-footer .modal_create {
+  position: relative;
+}
+
+.modal-footer .modal_create .i i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2.5vw;
+  cursor: pointer;
+  color: var(--bodyColor);
+}
+
+.modal-footer .modal_create .btn_create {
+  height: 3.6vw;
+  border: none;
+  outline: none;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.4vw;
+  border-radius: 1.8vw;
+  background-size: 200%;
+  background-image: linear-gradient(to right, #695cfe, #968dfb, #7d77b7);
+  width: 13.9vw;
+  display: inline-block;
+}
+
+.modal .modal-dialog .modal-footer .modal_create .btn_create:hover,
+.modal .modal-dialog .modal-footer .btn_close:hover {
+  background-position: right;
+}
+
+.editinfo .modal-dialog .modal-footer .btn_close {
+  margin: 0.5vw 1.1vw;
+  height: 3.6vw;
+  width: 40%;
+  border: none;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.4vw;
+  margin-right: 2.3vw;
+  border-radius: 1.8vw;
+  display: inline-block;
+  background-size: 200%;
+  background-image: linear-gradient(to right, #e74c3c, #eb3521, #ee240e);
+}
+
+body,
+.container .login-container form .input-div,
+.btn_send,
+.modal .modal-dialog .modal-body form .input-div > div,
+.modal .modal-dialog .modal-body form .input-div div #RestaurantCountry,
+.modal .modal-dialog .modal-body form .input-div div .check,
+.modal .modal-dialog .modal-footer .modal_create {
+  position: relative;
+}
+
+.input-div:after,
+.input-div:before,
+.container .login-container form .input-div > div h5,
+.container .login-container form .input-div div .input,
+.container .login-container form .input-div .check i,
+.btn_send .i i,
+.create-container span,
+.create-container button,
+.modal .modal-dialog .modal-body form .input-div div .i,
+.modal .modal-dialog .modal-body form .input-div div .check i,
+.modal .modal-dialog .modal-footer .modal_create .i i {
+  position: absolute;
+}
+
+/* Loader Start  */
+
+.loader-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  /* For Loader 1 */
+  /* background-color:white; */
+  /* For Loader 2 */
+  background-color:rgb(50,147,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loader-container img {
+  width: 40vw;
+}
+
+.loader-container.fade-out {
+  animation: vanish 5s forwards;
+}
+
+@keyframes vanish {
+  100%{
+    /* top: 100%; */
+    visibility: hidden;
+    opacity: 0; 
+  }
+}
+
+/* Loader End  */
+/* ---------------------- */
+
+
+input[type="file"] {
+  display: none;
+}
+
+#AdvertisementImageLabel {
+  position: relative;
+  color: white;
+  height: 2.9vw;
+  width: 16.1vw;
+  background-color: var(--subColor3);
+  margin: 0.7vw 1vw 1.4vw;
+  border-radius: 1vw;
+  text-indent: 0.7vw;
+  cursor: pointer;
+  font-size: 1.6vw;
+}
+
+#AdvertisementImageLabel i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0.3vw;
+}
+
+#illustrationAds {
+  width: 4vw;
+  position: absolute;
+  bottom: 1.5vw;
+  right: 6vw;
+  border-radius: 1.4vw;
+}
+
+#illustrationAds i {
+  font-size: 1.5vw;
+}
+
+#AdvertismentSubscribe .modal-body input[type='number'] {
+  width: 20vw;
+}
+
+
+section.myAds .table_responsive {
+  max-width: 950px;
+  position: absolute;
+  top: 50%;
+  border: 1px solid var(--primaryColor);
+  background-color: var(--bodyColor);
+  padding: 5px;
+  overflow: auto;
+  margin: 10vw 0 1vw;
+  margin-left: 30%;
+  border-radius: 10px;
+  transition: var(--tran-04);
+}
+
+.sidebar.close ~ section.myAds .table_responsive {
+  max-width: 1100px;
+  margin-left: 20%;
+  transition: var(--tran-04);
+}
+
+section.myAds table {
+  width: 100%;
+  font-size: 13px;
+  color: #444;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+section.myAds table>thead {
+  background-color: var(--primaryColor);
+  color: #fff;
+}
+
+section.myAds table>thead:hover {
+  background-color: var(--textColors);
+
+}
+
+table>thead th {
+  padding: 15px;
+  text-align: center;
+}
+
+table th,
+table td {
+  border: 1px solid #00000017;
+  padding: 10px 15px;
+}
+
+.action_btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action_btn>button {
+  text-decoration: none;
+  color: #444;
+  background: #fff;
+  border: 1px solid;
+  display: inline-block;
+  padding: 7px 20px;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.action_btn>button:nth-child(1) {
+  border-color: #2ecc71;
+}
+
+.action_btn>button:nth-child(2) {
+  border-color: #e74c3c;
+}
+
+.action_btn>button:hover {
+  box-shadow: 0 3px 8px #0003;
+}
+
+table>tbody>tr {
+  background-color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+table>tbody>tr:nth-child(even) {
+  background-color: rgb(238, 238, 238);
+}
+
+table>tbody>tr:hover{
+  filter: drop-shadow(0px 2px 6px #0002);
+}

@@ -1,0 +1,57 @@
+.create-container span {
+  right: -40%;
+}
+
+.create-container button {
+  right: -12%;
+}
+
+.create-container a span {
+  right: -37%;
+}
+
+.create-container a i {
+  right: -8%;
+}
+
+.modal .modal-dialog .modal-content .modal-header .btn-close {
+  margin-right: 63%;
+}
+
+#explain .modal-dialog .modal-content .modal-header .btn-close {
+  margin-right: 80%;
+}
+
+.modal .modal-dialog .modal-body form .input-div div .i {
+  right: 90%;
+}
+
+.modal .modal-dialog .modal-body form .input-div div .check i {
+  right: 85%;
+}
+
+.modal .modal-dialog .modal-body form .activation .i {
+  margin-right: 0.7vw;
+}
+
+.modal .modal-dialog .modal-body form .activation #illustrationActivation {
+  right: 91%;
+}
+
+.modal .modal-dialog .modal-body form .therteen #illustrationLayout {
+  right: 70%;
+}
+
+#PasswordEdit .modal-header {
+  height: 75px;
+}
+
+#PasswordEdit .modal-header h4 {
+  position: absolute;
+  right: 5%;
+}
+
+#PasswordEdit .modal-header .btn-close {
+  position: absolute;
+  left: 5%;
+}

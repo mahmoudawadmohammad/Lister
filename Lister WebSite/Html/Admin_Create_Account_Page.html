@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Reduce The Odds For A Lacuna XSS -->
+    <meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content="">
+    <meta name="description" content="">
+    <title>Admin Create Account Page</title>
+    <link rel="icon" href="../Icons/Create_Account.ico">
+            <!-- Link Font Awesome -->
+		<link rel="stylesheet" href="../Css/all.min.css">
+            <!-- Render All Element Nornmally -->
+		<link rel="stylesheet" href="../Css/Normalize.css">
+            <!-- Link BootStrap File Css -->
+		<link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+            <!-- Link Subscribe File Css -->
+		<link rel="stylesheet" href="../Css/Common_For_All.css">
+		<link rel="stylesheet" href="../Css/Restaurant_Login_Page.css">
+            <!-- Link Main File Css -->
+		<link rel="stylesheet" href="../Css/Admin_Create_Account_Page.css">
+    <link rel="stylesheet" href="" id="linkArabic">
+  </head>
+  <body>
+    <div class="languages">
+      <button id="english" class="btn-secondary btn-lg" title="Choose English Language (Shift + E)">English</button>
+      <button id="arabic" class="btn-info btn-lg" title="Choose Arabic Language (Shift + A)">عربي</button>
+    </div>
+    <div class="container">
+      <div class="login-container">
+      <form action="" id="form">
+          <img src="../Images/Logo_User.png" alt="Avatar Image" class="avatar">
+          <h2>Create Account</h2>
+          <div class="input-div two fne">
+              <div class="i">
+                  <i class="fa-solid fa-e"></i>
+              </div>
+              <div>
+                  <h5>First Name</h5>
+                  <input type="text" id="FirstNameEnglish" name="FirstNameEnglish" dir="auto" class="input text-center" 
+                  autocomplete="off" spellcheck="false" placeholder="Enter English Only" 
+                  onkeypress="playtypingAudio();" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-FirstNameEnglish"></small>
+          <div class="input-div two fna">
+              <div class="i">
+                  <i class="fa-solid fa-a"></i>
+              </div>
+              <div>
+                  <h5>First Name</h5>
+                  <input type="text" id="FirstNameArabic" name="FirstNameArabic" dir="auto" class="input text-center" 
+                  autocomplete="off" spellcheck="false" placeholder="Enter Arabic Only" 
+                  onkeypress="playtypingAudio();" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-FirstNameArabic"></small>
+          <div class="input-div two lne">
+              <div class="i">
+                  <i class="fa-solid fa-e"></i>
+              </div>
+              <div>
+                  <h5>Last Name</h5>
+                  <input type="text" id="lastNameEnglish" name="lastNameEnglish" dir="auto" class="input text-center" 
+                  autocomplete="off" spellcheck="false" placeholder="Enter English Only" 
+                  onkeypress="playtypingAudio();" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-lastNameEnglish"></small>
+          <div class="input-div two lna">
+              <div class="i">
+                  <i class="fa-solid fa-a"></i>
+              </div>
+              <div>
+                  <h5>Last Name</h5>
+                  <input type="text" id="LastNameArabic" name="LastNameArabic" dir="auto" class="input text-center" 
+                  autocomplete="off" spellcheck="false" placeholder="Enter Arabic Only" 
+                  onkeypress="playtypingAudio();" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-LastNameArabic"></small>
+          <div class="input-div two bd">
+              <div class="i">
+                  <i class="fas fa-calendar"></i>
+              </div>
+              <div>
+                  <h5>BirthDate</h5>
+                  <input type="date" id="BirthDate" name="BirthDate" 
+                  class="input text-center" autocomplete="off" 
+                  spellcheck="false" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-BirthDate"></small>
+          <div class="input-div two ph">
+              <div class="i">
+                  <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                  <h5>Phone Number</h5>
+                  <input type="text" id="PhoneNumber" name="PhoneNumber" dir="auto" class="input" autocomplete="off" spellcheck="false" 
+                  minlength="10" maxlength="10" 
+                  onkeypress="playtypingAudio();" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-PhoneNumber"></small>
+          <div class="input-div two image">
+              <div class="i">
+                  <i class="fa-solid fa-image"></i>
+              </div>
+              <div>
+                  <h5>Image</h5>
+                  <label for="AdminImage" id="chooseImage">Choose Image</label>
+                  <input type="file" id="AdminImage" name="AdminImage" class="input" accept="image/*">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-AdminImage"></small>
+          <div class="input-div two hd">
+              <div class="i">
+                  <i class="fa-brands fa-hire-a-helper"></i>
+              </div>
+              <div>
+                  <h5>Hire Date</h5>
+                  <input type="date" id="HireDate" name="HireDate" 
+                  class="input text-center" autocomplete="off" 
+                  spellcheck="false" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-HireDate"></small>
+          <div class="input-div two ed">
+              <div class="i">
+                  <i class="fa-solid fa-calendar"></i>
+              </div>
+              <div>
+                  <h5>End Date</h5>
+                  <input type="date" id="EndDate" name="EndDate" 
+                  class="input text-center" autocomplete="off" 
+                  spellcheck="false" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-EndDate"></small>
+          <div class="input-div two email">
+              <div class="i">
+                  <i class="far fa-envelope"></i>
+              </div>
+              <div>
+                  <h5>Email</h5>
+                  <input type="text" id="AdminEmail" name="AdminEmail" class="input" 
+                  autocomplete="off" spellcheck="false" dir="auto" 
+                  onkeypress="playtypingAudio();" oninput="CheckInputs();">
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-AdminEmail"></small>
+          <div class="input-div two p">
+              <div class="i">
+                  <i class="fas fa-lock"></i>
+              </div>
+              <div>
+                  <h5>Password</h5>
+                  <input type="password" id="AdminPassword" dir="auto" class="input"
+                  minlength="8" onkeypress="playtypingAudio();"
+                  oninput="CheckInputs();">
+                  <div class="show" title="Show Password">
+                        <i class="fa-solid fa-eye-slash" id="showiconPassword"></i>
+                    </div>
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+              </div>
+          </div>
+      <small id="message-AdminPassword"></small>
+          <div class="input-div two pc">
+              <div class="i">
+                  <i class="fas fa-lock"></i>
+              </div>
+              <div>
+                <h5>Password Confirm</h5>
+                <input type="password" id="AdminPasswordConfirm" name="AdminPasswordConfirm" 
+                dir="auto" class="input" minlength="8" 
+                onkeypress="playtypingAudio();" oninput="CheckInputs();">
+                <div class="show" title="Show Password">
+                <i class="fa-solid fa-eye-slash" id="showiconPasswordConfirm"></i>
+                </div>
+                  <div class="check">
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i> 
+                  </div>
+                  <div id="error"></div>
+              </div>
+          </div>
+      <small id="message-AdminPasswordConfirm"></small>
+      <h5 id="Adminaddress">Address</h5>
+      <a href="Google_Map_Page.html" target="_blank" id="google">Select Address</a>
+      <div class="btn_send">
+          <input type="submit" value="Create" class="btn_submit" onclick="playBtnAudio();SignIn();">
+          <div class="i">
+              <i class="fas fa-user-plus" title="Icon Create"></i>
+          </div>
+      </div>
+      </form>
+      </div>
+      <div class="img">
+          <img src="../Images/Restaurant_Login_Page/Test2.svg" alt="Login Image">
+      </div>
+  </div>
+    <!-- Loader Start -->
+		<div class="loader-container">
+			<img src="../loaders/Restaurant_Login_Page/loader2.gif" alt="">
+		</div>
+		<!-- Loader End -->
+		<!-- ----------------------- -->
+    <script src="../Js/js_Bootstrap.js"></script>
+    <script src="../Js/Admin_Create_Account_Page.js"></script>
+    <script src="../Js/Audios.js"></script>
+  </body>
+</html>

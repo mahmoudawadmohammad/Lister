@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="PFP_Admins_Page">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Think The keywords Of The meta content for The Website Project Suitable Page -->
+    <meta name="keywords" content="">
+    <!-- Think The Content Of The meta content for The Website Project Suitable Page -->
+    <meta name="description" content="">
+    <title id="PFP_Admins_Page_Title">Settings</title>
+    <link rel="icon" href="../Icons/Delivery_Man_1.ico">
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="../Css/all.min.css">
+    <!-- Render All Element Normalize -->
+    <link rel="stylesheet" href="../Css/Normalize.css">
+    <!-- Link BootStrap File Css -->
+    <link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+    <!-- Link Subscribe File Css -->
+    <link rel="stylesheet" href="../Css/Style_For_All.css">
+    <!-- Link Main File Css -->
+    <link rel="stylesheet" href="../CSS/Style_Admin_Setting_Page.css">
+    <link rel="stylesheet" href="../Css/master.css">
+</head>
+
+<body>
+    <!-- Navigation Bar Start -->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image" title="Restaurant Logo">
+					<img src="../images/2.gif" alt="Restaurant Logo">
+				</span>
+                <div class="text header-text">
+                    <span class="name" id="">First & Best</span>
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-right toggle" title="Let's Go ( Alt + O )" id="PFP_Toggle"></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="navigation-links home-link" title="Main Page ( Alt + H )" id="PFP_Admin_Home_T">
+                    <a href="Admin_Home_Page.html">
+                        <i class="fa-solid fa-home icon"></i>
+                        <span class="text nav-text home-text" id="PFP_Admin_Home_A">Home Page</span>
+                    </a>
+                </li>
+                <li class="navigation-links Delivery-Men-link" title="Delivery Men ( Alt + D )" id="PFP_Delivery_Men_T">
+                    <a href="Admin_Delivery_Men_Page.html">
+                        <i class="fa-solid fa-motorcycle icon"></i>
+                        <span class="text nav-text menu-text" id="PFP_Delivery_Men_A">Delivery Men</span>
+                    </a>
+                </li>
+                <li class="navigation-links Customers-link" title="Customers ( Alt + C )" id="PFP_Customers_T">
+                    <a href="Admin_Customers_Page.html">
+                        <i class="fa-solid fa-user icon"></i>
+                        <span class="text nav-text order-text" id="PFP_Customers_A">Customers</span>
+                    </a>
+                </li>
+                <li class="navigation-links Old-Admins-link" title="Admins ( Alt + A ) " id="PFP_Admins_T">
+                    <a href="Admin_Admins_Page.html">
+                        <i class="fa-solid fa-address-card icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Admins_A">Admins</span>
+                    </a>
+                </li>
+                <li class="navigation-links Restaurants-link" title="Restaurants ( Alt + R )" id="PFP_Restaurants_T">
+                    <a href="Admin_Restaurants_Page.html">
+                        <i class="fa-solid fa-utensils icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Restaurants_A">Restaurants</span>
+                    </a>
+                </li>
+                <li class="navigation-links Advertisements-link" title="Advertisements ( Ctrl + Alt + A )" id="PFP_Advertisements_T">
+                    <a href="Admin_Admins_Page.html">
+                        <i class="fa-solid fa-rectangle-ad icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Advertisements_A">Advertisements</span>
+                    </a>
+                </li>
+                <li class="navigation-links Complaints-link" title="Complaints ( Alt + C )" id="PFP_Complaints_T">
+                    <a href="Admin_Complaints_page.html">
+                        <i class="fa-solid fa-comments icon"></i>
+                        <span class="text nav-text advertisements-text" id="PFP_Complaints_A">Complaints</span>
+                    </a>
+                </li>
+                <li class="navigation-links settings-link" title="Settings ( Alt + S )" id="PFP_Admin_Settings_T">
+                    <a href="Admin_Settings_Page.html">
+                        <i class="fa-solid fa-gear icon"></i>
+                        <span class="text nav-text settings-text" id="PFP_Admin_Settings_A">Settings</span>
+                    </a>
+                </li>
+            </div>
+            <div class="bottom-navigation" data-bs-toggle="modal" data-bs-target="#logout">
+                <li class="logout-link" title="Logout" id="PFP_Logout_T">
+                    <a href="">
+                        <i class="fa-solid fa-right-from-bracket icon"></i>
+                        <span class="text nav-text logout-text" id="PFP_Logout_A">Logout</span>
+                        <span class="image" title="Personal Image">
+								<img src="../images/Logo_User.png" alt="Personal Image">
+						</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar End -->
+    <!-- ----------------------- -->
+    <!-- Button trigger modal -->
+    <div class="modal fade" id="logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Log Out</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span id="PFP_Log_Out_Warning">Are you sure you want to log out of the website</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn_close" id="Btn_close">Close</button>
+                    <button class="btn_close logout" onclick="logout()" id="PFP_Log_out">Log out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Start -->
+    <header class="top-header">
+        <div class="search-engine" title="Search (Alt + S)">
+            <label for="top-search">
+					<i class="fa-solid fa-search icon"></i>
+				</label>
+            <input type="search" name="" id="top-search" placeholder="Search..." dir="auto" spellcheck="false">
+        </div>
+        <div class="image-text">
+            <span class="image" title="Personal Image">
+				<img src="../images/Logo_User.png" alt="Personal Image">
+			</span>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- ----------------------- -->
+    <main id="PFP_Admin_Settings_Page">
+        <div class="PFP_Buttons_Section">
+            <h1 class="PFP_Primary_Title">Settings</h1>
+            <h2 class="PFP_Second_Title">Personal Settings</h2>
+            <div class="PFP_Buttons_Container">
+                <button class="PFP_Button" id="b1" onclick="Profile1()">
+                    <h4><i class="fa-solid fa-user"></i>Personal Profile</h4>
+                </button>
+                <button class="PFP_Button" id="b2" onclick="Theme()">
+                    <h4><i class="fa-solid fa-circle-half-stroke"></i>Theme</h4>
+                </button>
+                <button class="PFP_Button" id="b3" onclick="Language()">
+                    <h4><i class="fa-solid fa-language"></i>Language</h4>
+                </button>
+                <button class="PFP_Button" id="b4" onclick="change_password()">
+                    <h4><i class="fa-solid fa-key"></i>Change Password</h4>
+                </button>
+            </div>
+            <h2 class="PFP_Second_Title">General Settings</h2>
+            <div class="PFP_Buttons_Container">
+                <button class="PFP_Button" id="b5" onclick="Add_a_city()">
+                    <h4><i class="fa-solid fa-building"></i>Cities</h4>
+                </button>
+                <button class="PFP_Button" id="b6" onclick="Add_type()">
+                    <h4><i class="fa-solid fa-burger"></i>Types food</h4>
+                </button>
+            </div>
+        </div>
+        <div class="PFP_Horizontal_Column"></div>
+        <div class="PFP_Setting_Main_Section">
+            <div class="container">
+                <div id="Theme">
+                    <div class="PFP_Form_Box">
+                        <h2 class="PFP_Second_Title">Choose your Theme</h2>
+                        <label>
+                            <input type="radio" name="Them" value="DT" checked>
+                            <div class="PFP_Circle_Button"></div>
+                            <span>Default Theme Browser</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="Them" value="L">
+                            <div class="PFP_Circle_Button"></div>
+                            <span>Light</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="Them" value="D">
+                            <div class="PFP_Circle_Button"></div>
+                            <span>Dark</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="Language">
+                    <div class="PFP_Form_Box">
+                        <h2 class="PFP_Second_Title">Choose your Language</h2>
+                        <label>
+                            <input type="radio" name="Lang" value="DL" checked>
+                            <div class="PFP_Circle_Button"></div>
+                            <span>Default Language browser</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="Lang" value="E">
+                            <div class="PFP_Circle_Button"></div>
+                            <span>Arabic</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="Lang" value="A">
+                            <div class="PFP_Circle_Button"></div>
+                            <span>English</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="Personal_information">
+                    <h2 class="PFP_Second_Title">Edit your Personal information</h2>
+                    <div class="col-xl-8 mt-4">
+                        <div class="PFP_Card_Information d-flex">
+                            <figure>
+                                <img src="../Picture/Khaldoun.jpg" alt="" class="PFP_Image_Card">
+                                <figcaption>
+                                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="test">Edit Profile</button>
+                                </figcaption>
+                            </figure>
+                            <table class="PFP_Card_Table">
+                                <tr>
+                                    <td><span class="PFP_Title_Information kesa">Id :</span><span class="PFP_Information">15</span></td>
+                                    <td><span class="PFP_Title_Information">City :</span><span class="PFP_Information">Damascus</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="PFP_Title_Information">First Name :</span><span class="PFP_Information">Ali</span></td>
+                                    <td><span class="PFP_Title_Information">Last Name :</span><span class="PFP_Information">Ahmad</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="PFP_Title_Information">Phone :</span><span class="PFP_Information">0991562427</span></td>
+                                    <td><span class="PFP_Title_Information">Email :</span><span class="PFP_Information">Ali.asf@gmail.com</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="PFP_Title_Information">Address :</span><span class="PFP_Information">Reken al_aden</span></td>
+                                    <td><span class="PFP_Title_Information">Birth date :</span><span class="PFP_Information">22/09/1995</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="PFP_Title_Information">Hire date :</span><span class="PFP_Information">15/12/2020</span></td>
+                                    <td><span class="PFP_Title_Information">End date :</span><span class="PFP_Information">...</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="change_password">
+                    <h2 class="PFP_Second_Title">change password</h2>
+                </div>
+                <div id="Add_city">
+                    <div class="input-div five">
+                        <div>
+                            <h2 class="PFP_Second_Title">Current Cities</h2>
+                        </div>
+                        <div class="PFP_Containers">
+                            <table class="table table-hover table-light table-striped table-bordered caption-top">
+                                <caption>User Number in Cities</caption>
+                                <thead>
+                                    <tr>
+                                        <th>City</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Damascuse</td>
+                                    </tr>
+                                    <tr>
+                                        <td>latika</td>
+                                    </tr>
+                                    <tr>
+                                        <td>latika</td>
+                                    </tr>
+                                    <tr>
+                                        <td>dara</td>
+                                    </tr>
+                                    <tr>
+                                        <td>aleppo</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h2 class="PFP_Second_Title">Add New city</h2>
+                        <section class="profile">
+                            <div class="profile-img" data-bs-toggle="modal" data-bs-target="#ProfileEdit">
+                                <img src="../Picture/Logo_User.png" alt="Profile Image">
+                                <div class="profile-edit" data-bs-toggle="modal" data-bs-target="#ProfileEdit">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="Add_type_food">
+                        <h2 class="PFP_Second_Title">Add type food</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Popup Window  -->
+    <div class="modal fade" id="staticBackdrop">
+        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Edit Account</h4>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" id="form-container">
+                        <input type="hidden" name="Restaurant_ID">
+                        <div class="input-div one">
+                            <div>
+                                <h5>Full Name</h5>
+                                <input type="text" id="English_Owner_FullName" name="English_Owner_FullName" autocomplete="off" spellcheck="false" dir="auto" placeholder="Please Enter Full Name In English To Edit">
+                                <div class="i">
+                                    <i class="fa-solid fa-e" title="Restaurant Owner Full Name Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-English-OwnerFullName"></small>
+                            </div>
+                        </div>
+                        <div class="input-div one-two">
+                            <div>
+                                <h5>Full Name</h5>
+                                <input type="text" id="Arabic_Owner_FullName" name="English_Owner_FullName" autocomplete="off" spellcheck="false" dir="auto" placeholder="Please Enter Full Name In Arabic To Edit">
+                                <div class="i">
+                                    <i class="fa-solid fa-a" title="Restaurant Owner Full Name Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-Arabic-OwnerFullName"></small>
+                            </div>
+                        </div>
+                        <div class="input-div two">
+                            <div>
+                                <h5>Birth Date</h5>
+                                <input type="date" id="BirthDateOwner" name="BirthDateOwner" autocomplete="off" spellcheck="false" dir="auto">
+                                <div class="i">
+                                    <i class="fa-solid fa-calendar-days" title="BirthDate Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-BirthDate-Owner"></small>
+                            </div>
+                        </div>
+                        <div class="input-div three">
+                            <div>
+                                <h5>Image</h5>
+                                <input type="file" id="OwnerImage" name="OwnerImage" accept="image/*">
+                                <label for="RestaurantLogo" id="RestaurantLogoLabel">Choose a Image
+                              <i class="fa-solid fa-plus"></i>
+                            </label>
+                                <div class="i">
+                                    <i class="fa-solid fa-image" title="Owner Image Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-OwnerImage"></small>
+                            </div>
+                        </div>
+                        <div class="input-div four">
+                            <div>
+                                <h5>Address</h5>
+                                <textarea id="OwnerAddress" name="Address" cols="40" rows="5" maxlength="150" onkeyup="charactersCount()" spellcheck="false" placeholder="Please Enter The Owner Address To Edit" dir="ltr"></textarea>
+                                <div class="i">
+                                    <i class="fas fa-location" title="Owner Address Icon"></i>
+                                </div>
+                                <br>
+                                <span id="charactersCount">150 / 0 (The maximum Limit 150 Characters)</span>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-OwnerAddress"></small>
+                            </div>
+                        </div>
+                        <div class="input-div five">
+                            <div>
+                                <h5>Province</h5>
+                                <select name="City" id="OwnerCountry">
+                              <option style="display: none;" id="one-op">Check The Province Suitable</option>
+                              <option value="Damascus" selected id="two-op">Damascus</option>
+                              <option value="DamascusRural" id="three-op">Damascus rural</option>
+                              <option value="Aleepo" id="four-op">Aleppo</option>
+                            </select>
+                                <div class="i">
+                                    <i class="fas fa-globe" title="Owner Country Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-OwnerCountry"></small>
+                            </div>
+                        </div>
+                        <div class="input-div seven">
+                            <div>
+                                <h5>Phone Number</h5>
+                                <input type="text" name="Phone" id="OwnerPhone" dir="auto" minlength="10" maxlength="10" value="09" autocomplete="off" spellcheck="false" placeholder="09********">
+                                <div class="i">
+                                    <i class="fas fa-phone-alt" title="Owner Phone Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-OwnerPhone"></small>
+                            </div>
+                        </div>
+                        <!-- <div class="input-div nine">
+                            <div>
+                                <h5>Email</h5>
+                                <input type="text" name="OwnerEmail" id="OwnerEmail" autocomplete="off" spellcheck="false" dir="auto" placeholder="Please Enter The Email">
+                                <div class="i">
+                                    <i class="far fa-envelope" title="Email Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-OwnerEmail"></small>
+                            </div>
+                        </div>
+                        <div class="input-div ten">
+                            <div>
+                                <h5>Password</h5>
+                                <input type="password" name="Password" id="Password_Email" minlength="8" maxlength="18" dir="auto" placeholder="Please Enter The Password">
+                                <div class="show" title="Show Password">
+                              <i class="fa-solid fa-eye-slash" id="showicon"></i>
+                            </div>
+                                <div class="i">
+                                    <i class="fas fa-lock" title="Password icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-PasswordEmail"></small>
+                            </div>
+                        </div>
+                        <div class="input-div tewelve">
+                            <div>
+                                <h5>Password Confirm</h5>
+                                <input type="password" name="ConfirmPasswordEmail" id="ConfirmPassword_Email" dir="auto" placeholder="Please Enter The Password Confirm" minlength="8">
+                                <div class="i">
+                                    <i class="fas fa-lock" title="Password icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-ConfirmPasswordEmail"></small>
+                            </div>
+                        </div> -->
+                        <input type="hidden" name="City_ID">
+                </div>
+                <div class="modal-footer">
+                    <div class="modal_Edit">
+                        <input type="submit" value="Edit" class="btn_Edit">
+                        <div class="i">
+                            <i class="fas fa-user-plus" title="Icon Edit"></i>
+                        </div>
+                    </div>
+                    </form>
+                    <button data-bs-dismiss="modal" class="btn_close" title="Close (Alt + X)" id="close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Window  -->
+    <div class="modal fade" id="staticBackdrop">
+        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Add City</h4>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" id="form-container">
+                        <input type="hidden" name="Restaurant_ID">
+                        <div class="input-div one">
+                            <div>
+                                <h5>Fuشسيll ي</h5>
+                                <input type="text" id="English_Owner_FullName" name="English_Owner_FullName" autocomplete="off" spellcheck="false" dir="auto" placeholder="Please Enter Full Name In English To Edit">
+                                <div class="i">
+                                    <i class="fa-solid fa-e" title="Restaurant Owner Full Name Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-English-OwnerFullName"></small>
+                            </div>
+                        </div>
+                        <div class="input-div one-two">
+                            <div>
+                                <h5>ي</h5>
+                                <input type="text" id="Arabic_Owner_FullName" name="English_Owner_FullName" autocomplete="off" spellcheck="false" dir="auto" placeholder="Please Enter Full Name In Arabic To Edit">
+                                <div class="i">
+                                    <i class="fa-solid fa-a" title="Restaurant Owner Full Name Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-Arabic-OwnerFullName"></small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal_Edit">
+                        <input type="submit" value="Edit" class="btn_Edit">
+                        <div class="i">
+                            <i class="fas fa-user-plus" title="Icon Edit"></i>
+                        </div>
+                    </div>
+                    <button data-bs-dismiss="modal" class="btn_close" title="Close (Alt + X)" id="close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Js/js_Bootstrap.js "></script>
+    <script src="../Js/Java_Script_For_All.js"></script>
+    <script src="../Js/sSSSSript.js"></script>
+</body>
+
+</html>

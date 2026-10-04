@@ -1,0 +1,49 @@
+  .sidebar .menu-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+  }
+  
+  .sidebar header {
+      position: relative;
+  }
+  
+  .sidebar header .image-text {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 9.6vw;
+  }
+  
+  .sidebar.close header .image-text {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+  }
+  
+  .sidebar header .image-text h2 {
+      font-size: 1.5vw;
+      margin-bottom: 0;
+      height: 100%;
+      transition: var(--tran-03);
+  }
+  
+  .sidebar.close header .image-text h2 {
+      display: none;
+      margin-bottom: 0;
+      transition: var(--tran-03);
+  }
+  
+  .sidebar header .image-text img {
+      width: 7.5vw;
+      height: 7.5vw;
+      border-radius: 50%;
+      transition: var(--tran-03);
+  }
+  
+  .sidebar.close header .image-text img {
+      width: 2.5vw;
+      height: 2.5vw;
+      transition: var(--tran-03);
+  }

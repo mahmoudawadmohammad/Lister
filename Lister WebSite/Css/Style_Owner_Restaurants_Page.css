@@ -1,0 +1,204 @@
+#PFP_Owner_Restaurants_Page {
+    position: relative;
+    left: 16.4vw;
+    width: calc(100% - 16.4vw);
+    transition: all 0.3s ease;
+}
+
+.sidebar.close~#PFP_Owner_Restaurants_Page {
+    position: relative;
+    left: 5.6vw;
+    width: calc(100% - 5.6vw);
+    transition: all 0.3s ease;
+}
+
+.PFP_Owner_Restaurant_Card {
+    width: 40vw;
+    height: 20vw;
+    margin: 0 auto;
+    border-radius: 1vw;
+    position: relative;
+    -webkit-transition: 1.5s ease-in-out;
+    transition: 1.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.PFP_Owner_Restaurant_Front_Card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-shadow: 0 0.1vw 0.2vw 0 rgba(69, 90, 100, .08);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.PFP_Owner_Restaurant_Front_Card .PFP_Owner_Restaurant_Front_Left_Card {
+    width: 30%;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    border-top-left-radius: 0.5vw;
+    border-bottom-left-radius: 0.5vw;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.PFP_Owner_Restaurant_Front_Card .PFP_Owner_Restaurant_Front_Left_Card img {
+    border-radius: 50%;
+    width: 8.5vw;
+    height: 8.5vw;
+    display: block;
+    margin: 0 auto;
+}
+
+.PFP_Owner_Restaurant_Front_Card .PFP_Owner_Restaurant_Front_Right_Card {
+    width: 70%;
+    background: wheat;
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+    overflow-y: hidden;
+}
+
+.PFP_Owner_Restaurant_Front_Card .PFP_Owner_Restaurant_Front_Right_Card .PFP_Owner_Restaurant_Information_Card h4 {
+    color: #353c4e;
+    margin-bottom: 0.1vw;
+    font-size: 1.5vw;
+}
+
+.PFP_Owner_Restaurant_Front_Card .PFP_Owner_Restaurant_Front_Right_Card .PFP_Owner_Restaurant_Information_Card p {
+    font-size: 1.4vw;
+    color: purple;
+    margin: 0;
+    font-weight: 500;
+}
+
+.stars-outer {
+    position: relative;
+    display: inline-block;
+}
+
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.stars-outer::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #ccc;
+    font-size: 1.8vw;
+    margin: 0 1.2vw;
+}
+
+.stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #f8ce0b;
+    font-size: 1.8vw;
+    margin: 0 1.2vw;
+}
+
+.PFP_Owner_Restaurant_Id_Card {
+    width: 5vw;
+    height: 2.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    background-color: green;
+    font-size: 1.5vw;
+    color: pink;
+    margin: 0.2vw auto;
+}
+
+.PFP_Owner_Restaurant_Data_Part_Card {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.PFP_Owner_Restaurant_Front_Right_Card .PFP_Owner_Restaurant_Data_Card {
+    padding: 0 0.5vw 0.5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.PFP_Owner_Restaurant_Front_Right_Card .PFP_Owner_Restaurant_Title_Card {
+    height: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PFP_Owner_Restaurant_Front_Right_Card h2 {
+    font-size: 2vw;
+    margin: 0;
+}
+
+.PFP_Owner_Restaurant_Front_Card .PFP_Owner_Restaurant_Front_Right_Card .PFP_Owner_Restaurant_Information_Card {
+    width: 12vw;
+}
+
+.PFP_Owner_Restaurant_Back_Card {
+    background-color: yellow;
+    z-index: 0;
+    transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0.4vw 0.3vw;
+    color: #fff;
+    transform-style: preserve-3d;
+    border-radius: 0.5vw;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.PFP_Owner_Restaurant_Card:hover {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.PFP_Owner_Restaurant_Front_Counters_Card {
+    Overflow-y: auto;
+    height: 80%;
+}
+
+.PFP_Owner_Restaurant_Table_Card {
+    margin: 1vw auto;
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+tr td .PFP_Owner_Restaurant_Back_Card_Table_Cell {
+    margin: auto 0;
+}
+
+.PFP_Owner_Restaurant_Back_Card_Table_Important_Cell {
+    font-size: 1.32vw;
+    font-weight: 500;
+}
+
+.PFP_Horizontal_Line {
+    width: 0%;
+    min-width: 60%;
+    max-width: 100%;
+    margin: 0.7vw 0;
+    border: none;
+    border-bottom: 1px solid #666;
+    position: relative;
+    transition: box-shadow 200ms ease-in-out;
+    box-shadow: 0px 0px 0px 0px #f9f9f9;
+}
+
+.PFP_Owner_Restaurant_Back_Card button,
+.PFP_Owner_Restaurant_Front_Left_Card button {
+    margin: 0 auto;
+}

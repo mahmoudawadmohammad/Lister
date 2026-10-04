@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Reduce The Odds For A Lacuna XSS -->
+		<meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content="">
+    <meta name="description" content="">
+    <title>Orders & Reservations Page</title>
+    <link rel="icon" href="../Icons/Order_1.ico">
+            <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="../Css/all.min.css">
+            <!-- Render All Element Nornmally -->
+    <link rel="stylesheet" href="../Css/Normalize.css">
+            <!-- Link BootStrap File Css -->
+    <link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+						<!-- Link Subscribe File Css -->
+		<link rel="stylesheet" href="../Css/Common_For_All.css">
+            <!-- Link Main File Css -->
+    <link rel="stylesheet" href="../Css/Restaurant_Orders_Reservations_Page.css">
+    <link rel="stylesheet" href="" id="linkArabic">
+  </head>
+  <body>
+		<!-- Navigation Bar Start -->
+		<nav class="sidebar close">
+			<header>
+				<div class="image-text">
+					<span class="image" title="Resturant Logo">
+						<img src="../images/2.gif" alt="Resturant Logo">
+					</span>
+					<div class="text header-text">
+						<span class="name">First & Best</span>
+					</div>
+				</div>
+				<i class="fa-solid fa-angle-right toggle" title="Let's Go ( Alt + O )"></i>
+			</header>
+			<div class="menu-bar">
+				<div class="menu">
+						<li class="navigation-links home-link" title="Main Page ( Alt + P )">
+							<a href="Restaurant_Home_Page.html">
+								<i class="fa-solid fa-home icon"></i>
+								<span class="text nav-text home-text">Main Page</span>
+							</a>
+						</li>
+						<li class="navigation-links menu-link" title="Menus ( Alt + M )">
+							<a href="Restaurant_Menus_Page.html">
+								<i class="fa-solid fa-calendar-minus icon"></i>
+								<span class="text nav-text menu-text">Menus</span>
+							</a>
+						</li>
+						<li class="navigation-links order-link" title="Orders ( Alt + O )">
+							<a href="Restaurant_Orders_Reservations_Page.html">
+								<i class="fa-solid fa-bell-concierge icon"></i>
+								<span class="text nav-text order-text">Orders</span>
+							</a>
+						</li>
+						<li class="navigation-links advertisements-link" title="Advertisements ( Ctrl + Alt + A )">
+							<a href="Restaurant_Advertisements_Page.html">
+								<i class="fa-solid fa-rectangle-ad icon"></i>
+								<span class="text nav-text advertisements-text">Advertisements</span>
+							</a>
+						</li>
+						<li class="navigation-links settings-link" title="Settings ( Ctrl + Alt + S )">
+							<a href="Restaurant_Settings_Page.html">
+								<i class="fa-solid fa-gear icon"></i>
+								<span class="text nav-text settings-text">Settings</span>
+							</a>
+						</li>
+				</div>
+				<div class="bottom-navigation" data-bs-toggle="modal" data-bs-target="#logout">
+					<li class="logout-link" title="Logout">
+						<a href="#">
+							<i class="fa-solid fa-right-from-bracket icon"></i> 
+							<span class="text nav-text logout-text">Logout</span>
+							<span class="image" title="Personal Image">
+								<img src="../images/Logo_User.png" alt="Personal Image">
+							</span>
+						</a>
+					</li>
+				</div>
+			</div>
+		</nav>
+		<!-- Navigation Bar End -->
+		<!-- ----------------------- -->
+		<!-- Button trigger modal -->
+
+		<div class="modal fade" id="logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">Log Out</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<span>Are you sure you want to log out of the website</span>
+					</div>
+					<div class="modal-footer">
+						<button type="button" data-bs-dismiss="modal" class="btn_close">Close</button>
+						<button class="btn_close logout" onclick="logout()">Log out</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Start -->
+		<header class="top-header">
+			<div class="image-text">
+				<a href="Restaurant_Settings_Page.html">
+					<span class="image" title="Personal Image">
+						<img src="../images/Logo_User.png" alt="Personal Image">
+					</span>
+				</a>
+			</div>
+			<button id="toggle_Extenstions_Tool" class="btn btn-secondary" onclick="ToggleExtenstionTool()">Hide Extenstoin Tools</button>
+		</header>
+		<!-- Header End -->
+		<!-- ----------------------- -->
+		<!-- Extension Tool Start  -->
+		<nav class="extension-tool">
+			<li class="navigation-links todo-list" title="To Do List ( Shift + T )" data-bs-toggle="modal" data-bs-target="#staticBackdropToDoList" id="todo-list">
+				<a href="#">
+					<i class="fa-solid fa-clipboard ex-icon"></i>
+				</a>
+			</li>
+			<li class="navigation-links sticky-note" title="Sticky Note ( Shift + N )" data-bs-toggle="modal" data-bs-target="#staticBackdropStickyNote" id="sticky-note">
+				<a href="#">
+					<i class="fa-regular fa-note-sticky ex-icon"></i>
+				</a>
+			</li>
+			<li class="navigation-links language" title="Language ( Shift + L )" id="languages" onclick="CheckLanguage()">
+				<a href="#">
+					<i class="fa-solid fa-globe ex-icon"></i>
+				</a>
+			</li>
+			<li class="navigation-links theme-mode" title="Theme Mode ( Shift + M )" id="theme-mode" onclick="ChangeMode()">
+				<a href="#">
+					<i class="fa-solid fa-circle-half-stroke ex-icon"></i>
+				</a>
+			</li>
+		</nav>
+		<!-- Extension Tool End  -->
+		<!-- ----------------------- -->
+		<!-- Popup Window Todo List Start -->
+		<div class="modal fade" id="staticBackdropToDoList">
+      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="staticBackdropLabel">To Do List</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-todo">
+							<div class="form">
+								<input type="text" class="input" dir="auto" spellcheck="false" autocomplete="off" placeholder="Enter Any Thing You Want"/>
+								<input type="submit" class="add" value="Add Task" />
+							</div>
+							<h2>Tasks</h2>
+							<div class="tasks"></div>
+							</div>
+          </div>
+          <div class="modal-footer">
+            <button data-bs-dismiss="modal" class="btn_close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+		<!-- Popup Window Todo List End -->
+		<!-- ----------------------- -->
+		<!-- Popup Window Sticky Note Start -->
+		<div class="modal fade" id="staticBackdropStickyNote">
+      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="staticBackdropLabel">Sticky Note</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <header>
+							<form id="new-task-form">
+								<input type="text" name="new-task-input" id="new-task-input" placeholder="Enter Any Note You Want" autocomplete="off" 
+								spellcheck="false" dir="auto"/>
+								<input type="submit" id="new-task-submit" value="Add Note" />
+							</form>
+						</header>
+						<main>
+							<section class="task-list">
+								<h2>Notes</h2>
+								<div id="tasks">
+								</div>
+								<button id="clear-all">Clear All</button>
+							</section>
+						</main>
+          </div>
+          <div class="modal-footer">
+            <button data-bs-dismiss="modal" class="btn_close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+		<!-- Popup Window Sticky Note End -->
+		<!-- ----------------------- -->
+		<!-- Source And Welcoming Start -->
+		<section class="source-welcome">
+			<div class="source">
+				<a href="Restaurant_Orders_Reservations_Page.html">Orders & Reservations Page</a>
+				<span>></span>
+			</div>
+			<div class="welcome">
+				<span class="text">First & Best</span>
+			</div>
+		</section>
+		<!-- Source And Welcoming End -->
+		<!-- ----------------------- -->
+		<!-- Up Arrow Start -->
+		<span class="up-arrow">
+			<img src="../Images/ar3.png">
+		</span>
+		<!-- Up Arrow End -->
+		<!-- ----------------------- -->
+		<!-- Section Orders Start -->
+		<section class="orders">
+		<h2>The Orders</h2>
+		<section>
+			<div class="table_responsive">
+				<table id="t_ord">
+					<thead>
+						<tr>
+							<th id="oid">Id</th>
+							<th id="or">Order</th>
+							<th id="oc">Customer Name</th>
+							<th id="od">Date Time</th>
+							<th id="oe">Expected Time</th>
+							<th id="os">Comments</th>
+							<th id="oa">Action</th>
+						</tr>
+					</thead>
+					
+				</table>
+			</div>
+		</div>
+		</section>
+		<!-- Section Orders End -->
+		<!-- ----------------------- -->
+
+		<hr id="separater">
+
+			<!-- Section Reservations Start -->
+			<section class="reservations">
+				<h2>The Reservations</h2>
+				<section>
+					<div class="table_responsive">
+						<table id="t_res">
+							<thead>
+								<tr>
+									<th id="ri">Id</th>
+								
+									<th id="rc">Customer Name</th>
+									<th id="rd">Date Time</th>
+									<th id="re">Edate Time</th>
+									<th id="rp">Person Number</th>
+									<th id="rt">Tables Number</th>
+									<th id="rs">Comments</th>
+									<th id="ra">Action</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</section>
+			<br>
+			<!-- Section Reservations End -->
+			<!-- ----------------------- -->
+		      <!-- Link BootStrap File Js -->
+		<script src="../Js/js_Bootstrap.js"></script>
+    <script src="../Js/Restaurant_Orders_Reservations_Page.js"></script>
+    <script  type="module" src="../Js/Restaurant_Orders_Reservations_Page_M.js"></script>
+    <script src="../Js/Common_For_All.js"></script>
+  </body>
+</html>

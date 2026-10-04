@@ -1,0 +1,257 @@
+body {
+    background-color: var(--bodyColor);
+    overflow-x: hidden;
+}
+
+.sidebar .home-link:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    border-width: 1.4vw;
+    border-color: transparent var(--primaryColor) transparent transparent;
+    border-style: solid;
+    transition: var(--tran-03);
+}
+
+.sidebar .order-link:after {
+    display: none;
+}
+
+/* Cards Orders & Amount Start */
+
+.card-calc {
+    position: relative;
+    left: 21.5vw;
+    width: calc(100% - 21.5vw);
+    display: grid;
+    grid-template-columns: repeat(4, 16vw);
+    gap: 1.4vw;
+    transition: var(--tran-03);
+    margin-bottom: 2.9vw;
+}
+
+.sidebar.close~.card-calc {
+    left: 9.7vw;
+    width: calc(100% - 9.7vw);
+    display: grid;
+    grid-template-columns: repeat(4, 16.8vw);
+    gap: 1.4vw 3.6vw;
+}
+
+.card-calc .card {
+    border-radius: 0.7vw 0.7vw 50% 50%;
+    transition: var(--tran-03);
+}
+
+.card-calc .card:hover {
+    border-radius: 1.4vw;
+    background-color: var(--primaryColor);
+    transition: var(--tran-03);
+}
+
+.card-calc .card:hover i {
+    transition: var(--tran-05);
+    transform: rotate(360deg);
+}
+
+.card-calc .card .title {
+    font-size: 1.6vw;
+    text-align: center;
+    margin-top: 0.7vw;
+    border-bottom: 0.1vw solid var(--primaryColor);
+    padding-bottom: 0.2vw;
+}
+
+.card-calc .card i {
+    border: 0.1vw solid var(--textColors);
+    border-radius: 50%;
+    padding: 1vw;
+    font-size: 2.9vw;
+    width: fit-content;
+    margin: 0.7vw auto;
+    transition: var(--tran-05);
+}
+
+.card-calc .card .description {
+    text-align: center;
+    margin: 0.7vw auto;
+    width: fit-content;
+    border-radius: 50%;
+    padding: 0.7vw;
+    border-bottom: 0.1vw solid var(--primaryColor);
+}
+
+
+/* Cards Orders & Amount End */
+
+
+/* ---------------------- */
+
+.card h1 {
+    border: 2px solid var(--primaryColor);
+    width: fit-content;
+    margin: 1.4vw auto;
+    padding: 0.7vw;
+    border-radius: 1.8vw 0.5vw;
+    text-align: center;
+    color: var(--textColors);
+    transition: var(--tran-03);
+}
+
+.card h1:hover {
+    background-color: var(--primaryColor);
+    color: white;
+    transition: var(--tran-03);
+}
+
+.card hr {
+    border: 0.07vw solid black;
+    border-radius: 1.8vw;
+    margin: 1.8vw auto 1.4vw;
+    width: 80%;
+}
+
+hr#separater {
+    display: none;
+}
+
+table > tbody > tr > td > img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 3px solid var(--textColors);
+    box-shadow: 0 2px 6px var(--textColors);
+}
+
+
+.container {
+    transition: var(--tran-05);
+    position: relative;
+    left: 16.2vw;
+    top: 5vw;
+    width: calc(100% -16.2vw);
+    display: grid;
+    margin-bottom: 1.4vw;
+    grid-template-columns: repeat(2, 29.2vw);
+    gap: 0 4vw;
+}
+
+.sidebar.close~.container {
+    position: relative;
+    left: 4.3vw;
+    width: calc(100% - 4.3vw);
+    height: 21.9vw;
+    grid-template-columns: repeat(2, 32.9vw);
+}
+
+section.c-table { 
+    background-color: var(--bodyColor);
+}
+
+.container .cards {
+    box-shadow: 0 0.2vw 0.5vw 0 rgba(0, 0, 0, 0.2);
+    padding: 0.7vw 1.4vw;
+    border-radius: 1.8vw;
+    height: 29.2vw;
+    background-color: var(--sidebarColor);
+    margin-bottom: 2.9vw;
+}
+
+.container .cards .explain a {
+    display: flex;
+    justify-content: center;
+    /* width: fit-content; */
+    background-color: var(--buttonColor);
+    color: white;
+    padding: 0.7vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    border-radius: 1.8vw;
+    transition: var(--tran-03);
+    background-position: left;
+}
+
+.container .cards .explain a:hover {
+    transition: var(--tran-03);
+    background-image: radial-gradient(circle, #969597, #919092, #8c8c8e, #888789, #838384, #7f7f80, #7c7c7d, #787879, #747475, #707071, #6d6c6d, #696869);
+}
+
+.container .cards.one {
+    background-color: white;
+}
+
+.container .cards .explain h1 {
+    margin-top: 1.4vw;
+    text-align: center;
+    color: var(--textColors);
+}
+
+.container .cards .explain table {
+    border: 0.1vw solid var(--bodyColor);
+}
+
+.container .cards .explain hr {
+    border: 0.07vw solid black;
+    border-radius: 1.8vw;
+    margin: 1.8vw auto 1.4vw;
+    width: 80%;
+}
+
+.container .cards .explain li {
+    margin-bottom: 1.4vw;
+    font-size: 1.3vw;
+    color: white;
+    line-height: 1.7;
+    text-align: center;
+    list-style-image: url(../icons/ads.ico);
+}
+
+.old {
+    /* position: relative; */
+    top: 14.6vw;
+}
+
+.old .cards .explain hr {
+    margin-bottom: 0.7vw;
+}
+
+.old .cards .explain .progress {
+    margin-bottom: 1vw;
+    font-size: 1.1vw;
+    height: 1.4vw;
+    border-radius: 1.8vw;
+}
+
+.old .cards .explain #td {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.old .two .icon-budget {
+    margin-top: 2vw;
+    margin-left: 50%;
+    transform: translateX(-20%);
+}
+
+.old .two .icon-budget i {
+    font-size: 4.5vw;
+    border: 2px solid var(--textColors);
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 4vw;
+}
+
+.old .two .budget .description {
+    font-size: 4vw;
+    margin-left: 25%;
+    transform: translateX(-50%);
+    width: fit-content;
+    border-radius: 50%;
+    padding: 1vw;
+    border-bottom: 0.1vw solid var(--primaryColor);
+}
+

@@ -1,0 +1,132 @@
+#PFP_Advertising_Page {
+    position: relative;
+    left: 16.6vw;
+    width: calc(100% - 16.6vw);
+    transition: all 0.3s ease;
+}
+
+.sidebar.close~#PFP_Advertising_Page {
+    position: relative;
+    left: 5.6vw;
+    width: calc(100% - 5.6vw);
+    transition: all 0.3s ease;
+}
+
+.bg-gray-darker {
+    background-color: #232735;
+    color: #fff!important;
+}
+
+.PFP_Card_Top {
+    position: relative;
+}
+
+.PFP_Card_Bottom {
+    position: absolute;
+    bottom: -4vw;
+    width: fit-content;
+    height: fit-content;
+    z-index: 2;
+}
+
+.PFP_Card_Title_Word {
+    text-align: center;
+    font-size: 2vw;
+    color: royalblue;
+    margin: auto;
+}
+
+.bg-gray-dark {
+    background-color: #3a3f51;
+    color: #fff!important;
+}
+
+.PFP_Card_Down {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: cyan;
+    height: 2.5vw;
+}
+
+.PFP_Card_Down_Container_Information {
+    width: 30%;
+    background-color: cyan;
+    height: 100%;
+}
+
+.PFP_Image_Top {
+    width: 100%;
+    height: 18vw;
+}
+
+.PFP_Image_Circle {
+    margin-left: 1vw;
+    border-radius: 50%;
+    width: 8vw;
+    height: 8vw;
+}
+
+.PFP_Card_Container_Title {
+    background-color: cyan;
+    height: 4.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.PFP_Card_Container_Txt {
+    background: linear-gradient(45deg, #9aadc2, #73b4ff);
+    padding: 1vw;
+    height: 20vh;
+    Overflow-y: auto;
+}
+
+.PFP_Card_Title_Advertising {
+    font-size: 1.5vw;
+    margin: 0;
+    color: cyan;
+    font-weight: 550;
+}
+
+.PFP_Card_Title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 57%;
+    height: 100%;
+}
+
+.PFP_Card_Title_Id {
+    width: 20%;
+    height: 100%;
+    display: flex;
+}
+
+.PFP_Card_Title_Id_P {
+    background-color: blueviolet;
+    border-radius: 0.7vw;
+    font-size: 1.4vw;
+    text-align: center;
+    width: 4vw;
+    height: 2.2vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PFP_Card_Txt {
+    margin: 0;
+    font-size: 1vw;
+}
+
+.PFP_Card_Down_Information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6vw;
+    margin: 0;
+    font-weight: 475;
+}

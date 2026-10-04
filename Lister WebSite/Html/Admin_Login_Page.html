@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Reduce The Odds For A Lacuna XSS -->
+		<meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content="">
+    <meta name="description" content="">
+    <title>Admin Login Page</title>
+    <link rel="icon" href="../Icons/login_1.ico">
+            <!-- Link Font Awesome -->
+		<link rel="stylesheet" href="../Css/all.min.css">
+            <!-- Render All Element Nornmally -->
+		<link rel="stylesheet" href="../Css/Normalize.css">
+            <!-- Link BootStrap File Css -->
+		<link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+            <!-- Link Subscribe File Css -->
+		<link rel="stylesheet" href="../Css/Common_For_All.css">
+            <!-- Link Main File Css -->
+		<link rel="stylesheet" href="../Css/Restaurant_Login_Page.css">
+    <link rel="stylesheet" href="" id="linkArabic">
+  </head>
+  <body>
+    <div class="languages">
+      <button id="english" class="btn-secondary btn-lg" title="Choose English Language (Shift + E)">English</button>
+      <button id="arabic" class="btn-info btn-lg" title="Choose Arabic Language (Shift + A)">عربي</button>
+    </div>
+    <div class="container">
+      <div class="login-container">
+        <form action="" method="post">
+          <img src="../images/Restaurant_Login_Page/Logo_User.png" alt="Avatar Image" class="avatar" title="Avatar Image">
+          <h2>Welcome</h2>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fa-solid fa-phone-flip" title="Phone Number icon"></i>
+            </div>
+            <div>
+              <h5>Phone Number</h5>
+              <input type="tel" name="phoneNumber" id="phoneNumber" dir="auto" class="input text-center" autocomplete="off"
+              spellcheck="false" title="Phone Number (Alt + P)"  minlength="10" maxlength="10" value="09" placeholder="09********" 
+              onkeypress="playtypingAudio();" oninput="CheckInputs();">
+              <div class="check">
+                <i class="fas fa-check-circle" title="Accept icon"></i>
+                <i class="fas fa-exclamation-circle" title="Exclamation icon"></i> 
+              </div>
+            </div>
+          </div>
+          <small id="messagePhoneNumber"></small>
+          <div class="input-div two">
+            <div class="i">
+              <i class="fas fa-lock" title="Password icon"></i>
+            </div>
+            <div>
+              <h5>Password</h5>
+              <input type="password" name="password" id="password" dir="auto" class="input"
+              minlength="8" title="Password (Alt + P)" 
+              onkeypress="playtypingAudio();" oninput="CheckInputs();SignIn();">
+              <div class="check">
+                <i class="fas fa-check-circle" title="Accept icon"></i>
+                <i class="fas fa-exclamation-circle" title="Exclamation icon"></i> 
+              </div>
+            </div>
+            <div class="show" title="Show Password">
+              <i class="fa-solid fa-eye-slash" id="showicon"></i>
+            </div>
+          </div>
+          <small id="messagePassword"></small>
+          <div class="btn_send" title="Send (Alt + S)">
+            <a href="www.facebook.com">
+              <input type="submit" value="Login" class="btn_submit" onclick="playBtnAudio();">
+            </a>
+            <div class="i">
+              <i class="fas fa-sign-in-alt" title="Login Icon"></i>
+            </div>
+          </div>
+        </form>
+        <div class="create-container">
+          <a href="forget_password.html" target="_blank">
+            <span>forget My Password ???</span>
+            <i class="fa-solid fa-key"></i>
+          </a>
+        </div>
+      </div>
+      <div class="img">
+        <img src="../images/Owner_Login_Page/4.svg" alt="Login Image" title="Login Image">
+      </div>
+    </div>
+    <!-- Loader Start -->
+		<div class="loader-container">
+			<img src="../loaders/Restaurant_Login_Page/loader2.gif" alt="">
+		</div>
+		<!-- Loader End -->
+		<!-- ----------------------- -->
+    <script src="../Js/js_Bootstrap.js"></script>
+    <script src="../Js/Admin_Login_Page.js"></script>
+    <script src="../Js/Audios.js"></script>
+  </body>
+</html>

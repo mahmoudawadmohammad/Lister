@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Reduce The Odds For A Lacuna XSS -->
+		<meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content="">
+    <meta name="description" content="">
+    <title>Owner Login Page</title>
+    <link rel="icon" href="../Icons/login_1.ico">
+            <!-- Link Font Awesome -->
+		<link rel="stylesheet" href="../Css/all.min.css">
+            <!-- Render All Element Nornmally -->
+		<link rel="stylesheet" href="../Css/Normalize.css">
+            <!-- Link BootStrap File Css -->
+		<link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+            <!-- Link Subscribe File Css -->
+		<link rel="stylesheet" href="../Css/Common_For_All.css">
+    <link rel="stylesheet" href="../Css/Restaurant_Login_Page.css">
+            <!-- Link Main File Css -->
+		<link rel="stylesheet" href="../Css/Owner_Login_Page.css">
+    <link rel="stylesheet" href="" id="linkArabic">
+  </head>
+  <body>
+    <div class="languages">
+      <button id="english" class="btn-secondary btn-lg" title="Choose English Language (Shift + E)">English</button>
+      <button id="arabic" class="btn-info btn-lg" title="Choose Arabic Language (Shift + A)">عربي</button>
+    </div>
+    <div class="explain-btn" data-bs-toggle="modal" data-bs-target="#explain">
+      <i class="fa-solid fa-circle-info"></i>
+    </div>
+    <div class="modal fade" id="explain" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog moda-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">Illustation</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<span id="sen1">If You Have An Account Just Login</span> 
+            <strong id="sens1">To Connect Your Restaurants Together</strong>
+            <hr>
+            <span id="sen2">And If You Don't Have Account You Should Create Account</span>
+            <strong id="sens2">To Connect Your Restaurants Together</strong>
+					</div>
+					<div class="modal-footer">
+						<button type="button" data-bs-dismiss="modal" class="btn_close" onclick="playBtnAudio();">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="container">
+      <div class="login-container">
+        <form action="" method="post">
+          <img src="../images/Restaurant_Login_Page/Logo_User.png" alt="Avatar Image" class="avatar" title="Avatar Image">
+          <h2>Welcome</h2>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fa-solid fa-phone-flip" title="Phone Number icon"></i>
+            </div>
+            <div>
+              <h5>Phone Number</h5>
+              <input type="tel" name="phoneNumber" id="phoneNumber" dir="auto" class="input text-center" autocomplete="off"
+              spellcheck="false" title="Phone Number (Alt + N)"  minlength="10" maxlength="10" value="09" placeholder="09********"
+              onkeypress="playtypingAudio();" oninput="CheckInputs()">
+              <div class="check">
+                <i class="fas fa-check-circle" title="Accept icon"></i>
+                <i class="fas fa-exclamation-circle" title="Exclamation icon"></i> 
+              </div>
+            </div>
+          </div>
+          <small id="messagePhoneNumber"></small>
+          <div class="input-div two">
+            <div class="i">
+              <i class="fas fa-lock" title="Password icon"></i>
+            </div>
+            <div>
+              <h5>Password</h5>
+              <input type="password" name="password" id="password" dir="auto" class="input"
+              minlength="8" title="Password (Alt + P)" 
+              onkeypress="playtypingAudio();" oninput="CheckInputs()">
+              <div class="check">
+                <i class="fas fa-check-circle" title="Accept icon"></i>
+                <i class="fas fa-exclamation-circle" title="Exclamation icon"></i> 
+              </div>
+            </div>
+            <div class="show" title="Show Password">
+              <i class="fa-solid fa-eye-slash" id="showicon"></i>
+            </div>
+          </div>
+          <small id="messagePassword"></small>
+          <div class="btn_send" title="Send (Alt + S)">
+            <a href="">
+              <input type="submit" value="Login" class="btn_submit" onclick="playBtnAudio();SignIn();">
+            </a>
+            <div class="i">
+              <i class="fas fa-sign-in-alt" title="Login Icon"></i>
+            </div>
+          </div>
+        </form>
+        <div class="create-container">
+          <span>I don't have account</span>
+          <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="Create Account (Alt + R)">Create Account</button>
+        </div>
+        <div class="create-container">
+          <a href="forget_password.html" target="_blank">
+            <span>forget My Password ???</span>
+            <i class="fa-solid fa-key"></i>
+          </a>
+        </div>
+      </div>
+      <div class="img">
+        <img src="../images/Owner_Login_Page/1.svg" alt="Login Image" title="Login Image">
+      </div>
+    </div>
+                                        <!-- Popup Window  -->
+    <div class="modal fade" id="staticBackdrop">
+      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="staticBackdropLabel">Create Account</h4>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <form action="" method="post" id="form-container">
+                <input type="hidden" name="Restaurant_ID">
+                    <div class="input-div one-fne">
+                      <div>
+                        <h5>First Name</h5>
+                        <input type="text" id="English_Owner_FirstName" name="English_Owner_FirstName" autocomplete="off" 
+                        spellcheck="false" dir="auto" placeholder="Please Enter First Name In English"
+                        onkeypress="playtypingAudio()" oninput="CheckInputsWindow()">
+                        <div class="i">
+                          <i class="fa-solid fa-e" title="Restaurant Owner Name Icon"></i>
+                        </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message-English-Owner-FirstName"></small>
+                      </div>
+                    </div>
+                    <div class="input-div one-fna">
+                      <div>
+                        <h5>First Name</h5>
+                        <input type="text" id="Arabic_Owner_FirstName" name="Arabic_Owner_FirstName" autocomplete="off" 
+                        spellcheck="false" dir="auto" placeholder="Please Enter First Name In Arabic"
+                        onkeypress="playtypingAudio()" oninput="CheckInputsWindow()">
+                        <div class="i">
+                          <i class="fa-solid fa-a" title="Restaurant Owner Name Icon"></i>
+                        </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message-Arabic-Owner-FirstName"></small>
+                      </div>
+                    </div>
+                    <div class="input-div one-lne">
+                      <div>
+                        <h5>Last Name</h5>
+                        <input type="text" id="English_Owner_LastName" name="English_Owner_LastName" autocomplete="off" 
+                        spellcheck="false" dir="auto" placeholder="Please Enter Last Name In English"
+                        onkeypress="playtypingAudio()" oninput="CheckInputsWindow()">
+                        <div class="i">
+                          <i class="fa-solid fa-e" title="Restaurant Owner Name Icon"></i>
+                        </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message-English-Owner-LastName"></small>
+                      </div>
+                    </div>
+                    <div class="input-div one-lna">
+                      <div>
+                        <h5>Last Name</h5>
+                        <input type="text" id="Arabic_Owner_LastName" name="Arabic_Owner_LastName" autocomplete="off" 
+                        spellcheck="false" dir="auto" placeholder="Please Enter Last Name In Arabic"
+                        onkeypress="playtypingAudio()" oninput="CheckInputsWindow()">
+                        <div class="i">
+                          <i class="fa-solid fa-a" title="Restaurant Owner Name Icon"></i>
+                        </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message-Arabic-Owner-LastName"></small>
+                      </div>
+                    </div>
+                    <div class="input-div two">
+                        <div>
+                          <h5>BirthDate</h5>
+                          <input type="date" id="BirthDateOwner" name="BirthDateOwner" autocomplete="off" 
+                          spellcheck="false" dir="auto">
+                          <div class="i">
+                            <i class="fa-solid fa-calendar-days" title="BirthDate Icon"></i>
+                          </div>
+                          <div class="check">
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i> 
+                          </div>
+                          <small id="message-BirthDate-Owner"></small>
+                        </div>
+                      </div>
+                    <div class="input-div three">
+                        <div>
+                            <h5>Image For Owner</h5>
+                            <input type="file" id="OwnerImage" name="OwnerImage" accept="image/*">
+                            <label for="RestaurantLogo" id="RestaurantLogoLabel">Choose a Image
+                              <i class="fa-solid fa-plus"></i>
+                            </label>
+                            <div class="i">
+                              <i class="fa-solid fa-image" title="Owner Image Icon"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message-OwnerImage"></small>
+                        </div>
+                    </div>
+                    <div class="input-div four google">
+                        <div>
+                            <h5>Owner Address</h5>
+                            <a href="Google_Map_Page.html" target="_blank">Select Address</a>
+                            <div class="i">
+                              <i class="fas fa-location" title="Owner Address Icon"></i>
+                            </div>
+                            <br>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message-OwnerAddress"></small>
+                        </div>
+                    </div>
+                    <div class="input-div five">
+                        <div>
+                            <h5>Province</h5>
+                            <select name="City" id="OwnerCountry">
+                              <option style="display: none;" id="one-op">Check The Province Suitable</option>
+                              <option value="Damascus" selected id="two-op">Damascus</option>
+                              <option value="DamascusRural" id="three-op">Damascus rural</option>
+                              <option value="Aleepo" id="four-op">Aleppo</option>
+                            </select>
+                            <div class="i">
+                              <i class="fas fa-globe" title="Owner Country Icon"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message-OwnerCountry"></small>
+                        </div>
+                    </div>
+                    <div class="input-div seven">
+                        <div>
+                            <h5>Phone Number</h5>
+                            <input type="text" name="Phone" id="OwnerPhone" dir="auto"
+                            minlength="10" maxlength="10" value="09" autocomplete="off" spellcheck="false"
+                            placeholder="09********" onkeypress="playtypingAudio()"
+                            oninput="CheckInputsWindow()">
+                            <div class="i">
+                              <i class="fas fa-phone-alt" title="Owner Phone Icon"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message-OwnerPhone"></small>
+                        </div>
+                    </div>
+                    <div class="input-div nine">
+                        <div>
+                            <h5>Email</h5>
+                            <input type="text" name="OwnerEmail" id="OwnerEmail" autocomplete="off"
+                            spellcheck="false" dir="auto" placeholder="Please Enter The Email" 
+                            onkeypress="playtypingAudio()" oninput="CheckInputsWindow()">
+                            <div class="i">
+                            <i class="far fa-envelope" title="Email Icon"></i>
+                          </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message-OwnerEmail"></small>
+                        </div>
+                    </div>
+                    <div class="input-div ten">
+                        <div>
+                            <h5>Password</h5>
+                            <input type="password" name="Password" id="Password_Email" onkeypress="playtypingAudio()"
+                            minlength="8" maxlength="18" dir="auto" placeholder="Please Enter The Password"
+                            oninput="CheckInputsWindow()">
+                            <div class="i">
+                              <i class="fas fa-lock" title="Password icon"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message-PasswordEmail"></small>
+                        </div>
+                    </div>
+                    <div class="input-div tewelve">
+                        <div>
+                            <h5>Password Confirm</h5>
+                            <input type="password" name="ConfirmPasswordEmail" id="ConfirmPassword_Email" dir="auto"
+                            placeholder="Please Enter The Password Confirm" minlength="8" 
+                            onkeypress="playtypingAudio()" oninput="CheckInputsWindow()">
+                            <div class="i">
+                              <i class="fas fa-lock" title="Password icon"></i>
+                            </div>
+                            <div class="check">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i> 
+                            </div>
+                            <small id="message-ConfirmPasswordEmail"></small>
+                        </div>
+                    </div>
+                <input type="hidden" name="City_ID">
+          </div>
+          <div class="modal-footer">
+            <div class="modal_create">
+              <input type="submit" value="Create" class="btn_create" onclick="SignUp();playBtnAudio();">
+              <div class="i">
+                <i class="fas fa-user-plus" title="Icon Create"></i>
+              </div>
+            </div>
+            </form>
+            <button data-bs-dismiss="modal" class="btn_close" title="Close (Alt + X)" id="close" onclick="playBtnAudio();">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Loader Start -->
+		<div class="loader-container">
+			<img src="../loaders/Restaurant_Login_Page/loader2.gif" alt="">
+		</div>
+		<!-- Loader End -->
+		<!-- ----------------------- -->
+    <script src="../Js/js_Bootstrap.js"></script>
+    <script src="../Js/Owner_Login_Page.js"></script>
+    <script src="../Js/Audios.js"></script>
+  </body>
+</html>

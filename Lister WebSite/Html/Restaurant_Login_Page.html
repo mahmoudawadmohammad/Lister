@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Reduce The Odds For A Lacuna XSS -->
+    <meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Restaurant Login Page</title>
+    <link rel="icon" href="../Icons/login_1.ico">
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="../Css/all.min.css">
+    <!-- Render All Element Nornmally -->
+    <link rel="stylesheet" href="../Css/Normalize.css">
+    <!-- Link BootStrap File Css -->
+    <link rel="stylesheet" href="../Css/Style_Bootstrap.css">
+    <!-- Link Subscribe File Css -->
+    <link rel="stylesheet" href="../Css/Common_For_All.css">
+    <!-- Link Main File Css -->
+    <link rel="stylesheet" href="../Css/Restaurant_Login_Page.css">
+    <link rel="stylesheet" href="" id="linkArabic">
+</head>
+<body>
+    <div class="languages">
+        <button id="english" class="btn-secondary btn-lg" title="Choose English Language (Shift + E)">English</button>
+        <button id="arabic" class="btn-info btn-lg" title="Choose Arabic Language (Shift + A)">عربي</button>
+    </div>
+    <div class="container">
+        <div class="login-container">
+            <form action="" method="post">
+                <img src="../images/Restaurant_Login_Page/Logo_User.png" alt="Avatar Image" class="avatar" title="Avatar Image">
+                <h2>Welcome</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fa-solid fa-phone-flip" title="Phone Number icon"></i>
+                    </div>
+                    <div>
+                        <h5>Phone Number</h5>
+                        <input type="tel" name="phoneNumber" id="phoneNumber" dir="auto" class="input text-center" 
+                        autocomplete="off" spellcheck="false" title="Phone Number (Alt + P)" minlength="10" maxlength="10"
+                        value="09" placeholder="09********" onkeypress="playtypingAudio();" oninput="CheckInputs()">
+                        <div class="check">
+                            <i class="fas fa-check-circle" title="Accept icon"></i>
+                            <i class="fas fa-exclamation-circle" title="Exclamation icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <small id="messagePhoneNumber"></small>
+                <div class="input-div two">
+                    <div class="i">
+                        <i class="fas fa-lock" title="Password icon"></i>
+                    </div>
+                    <div>
+                        <h5>Password</h5>
+                        <input type="password" name="password" id="password" dir="auto" class="input" title="Password (Alt + P)"
+                        minlength="8" onkeypress="playtypingAudio()" oninput="CheckInputs()">
+                        <div class="check">
+                            <i class="fas fa-check-circle" title="Accept icon"></i>
+                            <i class="fas fa-exclamation-circle" title="Exclamation icon"></i>
+                        </div>
+                    </div>
+                    <div class="show" title="Show Password">
+                        <i class="fa-solid fa-eye-slash" id="showicon"></i>
+                    </div>
+                </div>
+                <small id="messagePassword"></small>
+                <div class="btn_send" title="Send (Alt + S)">
+                    <a href="">
+                        <input type="submit" value="Login" class="btn_submit" onclick="playBtnAudio();SignIn();">
+                    </a>
+                    <div class="i">
+                        <i class="fas fa-sign-in-alt" title="Login Icon"></i>
+                    </div>
+                </div>
+            </form>
+            <div class="create-container">
+                <span>I don't have account</span>
+                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="Create Account (Alt + R)">Create Account</button>
+            </div>
+            <div class="create-container">
+                <a href="forget_password.html" target="_blank">
+                    <span>forget My Password ???</span>
+                    <i class="fa-solid fa-key"></i>
+                </a>
+            </div>
+        </div>
+        <div class="img">
+            <img src="../images/Restaurant_Login_Page/Test2.svg" alt="Login Image" title="Login Image">
+        </div>
+    </div>
+    <!-- Popup Window  -->
+    <div class="modal fade" id="staticBackdrop">
+        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Create Account</h4>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" id="form-container">
+                        <input type="hidden" name="Restaurant_ID">
+                        <div class="input-div one">
+                            <div>
+                                <h5>Restaurant Name</h5>
+                                <input type="text" id="Restaurant_EnglishName" name="Restaurant_English_Name"
+                                autocomplete="off" spellcheck="false" dir="auto" placeholder="Please Enter Restaurant English"
+                                oninput="CheckInputsWindow()" onkeypress="playtypingAudio()">
+                                <div class="i">
+                                    <i class="fa-solid fa-e" title="Restaurant English Name Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-Restaurant-EnglishName"></small>
+                            </div>
+                        </div>
+                        <div class="input-div two">
+                            <div>
+                                <h5>Restaurant Name</h5>
+                                <input type="text" id="RestaurantArabicName" name="Restaurant_Arabic_Name"
+                                autocomplete="off" spellcheck="false" dir="auto" placeholder="Please Enter Restaurant Name Arabic"
+                                oninput="CheckInputsWindow()" onkeypress="playtypingAudio()">
+                                <div class="i">
+                                    <i class="fa-solid fa-a" title="Restaurant Arabic Name Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-Restaurant-ArabicName"></small>
+                            </div>
+                        </div>
+                        <div class="input-div three">
+                            <div>
+                                <h5>Restaurant Logo</h5>
+                                <input type="file" id="RestaurantLogo" name="Restaurant_Logo" accept="image/*">
+                                <label for="RestaurantLogo" id="RestaurantLogoLabel">Choose a Logo
+                              <i class="fa-solid fa-plus"></i>
+                            </label>
+                                <div class="i">
+                                    <i class="fa-solid fa-image" title="Restaurant Logo Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaurantLogo"></small>
+                            </div>
+                        </div>
+                        <div class="input-div four google">
+                            <div>
+                                <h5>Restaurant Address</h5>
+                                <a href="Google_Map_Page.html" target="_blank">Select Address</a>
+                                <div class="i">
+                                    <i class="fas fa-location" title="Restaurant Address Icon"></i>
+                                </div>
+                                <br>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaurantAddress"></small>
+                            </div>
+                        </div>
+                        <div class="input-div five">
+                            <div>
+                                <h5>Province</h5>
+                                <select name="City" id="RestaurantCountry">
+                              <option style="display: none;" id="one-op">Check The Province Suitable</option>
+                              <option value="Damascus" id="two-op" selected>Damascus</option>
+                              <option value="DamascusRural" id="three-op">Damascus rural</option>
+                              <option value="Aleepo" id="four-op">Aleppo</option>
+                            </select>
+                                <div class="i">
+                                    <i class="fas fa-globe" title="Restaurant Country Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaurantCountry"></small>
+                            </div>
+                        </div>
+                        <div class="input-div six">
+                            <div>
+                                <h5>Type</h5>
+                                <select name="Restaurant_Type" id="RestaurantType">
+                            <option style="display: none;">Check The Type Suitable</option>
+                            <option value="R" id="one-ty">Reversation</option>
+                            <option value="O" id="two-ty">Order</option>
+                            <option value="R & O" id="three-ty" selected>Reversation & Order</option>
+                          </select>
+                                <div class="i">
+                                    <i class="fab fa-tumblr-square" title="Restaurant Type Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaurantType"></small>
+                            </div>
+                        </div>
+                        <div class="input-div seven">
+                            <div>
+                                <h5>Phone Number</h5>
+                                <input type="text" name="Restaurant_Phone" id="RestaruantPhone" dir="auto" minlength="10"
+                                maxlength="10" value="09" autocomplete="off" spellcheck="false" placeholder="09********"
+                                oninput="CheckInputsWindow()" onkeypress="playtypingAudio()">
+                                <div class="i">
+                                    <i class="fas fa-phone-alt" title="Restaurant Phone Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaruantPhone"></small>
+                            </div>
+                        </div>
+                        <div class="input-div eight">
+                            <div>
+                                <h5>Number Of Tables</h5>
+                                <input type="number" name="Restaurant_Total_Tables" id="TablesTotal" min="0" step="1" 
+                                max="1000" oninput="CheckInputsWindow()">
+                                <div class="i">
+                                    <i class="fas fa-box" title="Tables Total Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaurantTables"></small>
+                            </div>
+                        </div>
+                        <div class="input-div activation">
+                            <div>
+                                <h5>Opening & Closing Time</h5>
+                                <table class="table table-bordered table">
+                                    <tr>
+                                        <th id="days">Days</th>
+                                        <th id="sd">Start Date</th>
+                                        <th id="es">End Date</th>
+                                    </tr>
+                                    <tr>
+                                        <td id="day1">Saturday</td>
+                                        <td><input type="time" name="" id=""></td>
+                                        <td><input type="time" name="" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="day2">Sunday</td>
+                                        <td><input type="time" name="" id=""></td>
+                                        <td><input type="time" name="" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="day3">Mondy</td>
+                                        <td><input type="time" name="" id=""></td>
+                                        <td><input type="time" name="" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="day4">Tuesday</td>
+                                        <td><input type="time" name="" id=""></td>
+                                        <td><input type="time" name="" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="day5">Wensday</td>
+                                        <td><input type="time" name="" id=""></td>
+                                        <td><input type="time" name="" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="day6">Thursday</td>
+                                        <td><input type="time" name="" id=""></td>
+                                        <td><input type="time" name="" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="day7">Friday</td>
+                                        <td><input type="time" name="" id=""></td>
+                                        <td><input type="time" name="" id=""></td>
+                                    </tr>
+                                </table>
+                                <div class="i">
+                                    <i class="fa-solid fa-calendar-days" title="Email Icon"></i>
+                                </div>
+                                <button type="button" id="illustrationActivation" class="btn btn-outline-warning" title="Important Illustration" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="If the times are not specified on a day , that day is considered a holiday"><i class="fa-solid fa-triangle-exclamation"></i></button>
+                            </div>
+                        </div>
+                        <div class="input-div nine">
+                            <div>
+                                <h5>Email</h5>
+                                <input type="text" name="Restaurant_Email" id="RestaurantEmail" autocomplete="off" 
+                                spellcheck="false" dir="auto" placeholder="Please Enter The Email" oninput="CheckInputsWindow()"
+                                onkeypress="playtypingAudio()">
+                                <div class="i">
+                                    <i class="far fa-envelope" title="Email Icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaurantEmail"></small>
+                            </div>
+                        </div>
+                        <div class="input-div ten">
+                            <div>
+                                <h5>Password</h5>
+                                <input type="password" name="Password_Email" id="Password_Email" minlength="8" maxlength="18" 
+                                dir="auto" placeholder="Please Enter The Password" oninput="CheckInputsWindow()" 
+                                onkeypress="playtypingAudio()">
+                                <div class="i">
+                                    <i class="fas fa-lock" title="Password icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-PasswordEmail"></small>
+                            </div>
+                        </div>
+                        <div class="input-div tewelve">
+                            <div>
+                                <h5>Password Confirm</h5>
+                                <input type="password" name="ConfirmPasswordEmail" id="ConfirmPassword_Email" dir="auto" 
+                                placeholder="Please Enter The Password Confirm" minlength="8" oninput="CheckInputsWindow()"
+                                onkeypress="playtypingAudio()">
+                                <div class="i">
+                                    <i class="fas fa-lock" title="Password icon"></i>
+                                </div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-ConfirmPasswordEmail"></small>
+                            </div>
+                        </div>
+                        <div class="input-div therteen">
+                            <div>
+                                <h5>Layout</h5>
+                                <input type="file" id="layout" name="Restaurant_layout" accept="image/*">
+                                <label for="layout" id="RestaurantLogoLabel">Upload a Layout
+                                    <i class="fa-solid fa-upload"></i>
+                                </label>
+                                <div class="i">
+                                    <i class="fa-solid fa-layer-group" title="Restaurant Layout Icon"></i>
+                                </div>
+                                <button type="button" id="illustrationLayout" class="btn btn-outline-info" title="What Does The Layout Mean ?" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="A restaurant layout is a conceptual sketch of your restaurant space that includes the dining areas, kitchen, storage, bathrooms, and so on. It shows how your restaurant will look and function. Creating a layout is a crucial step to getting started with a restaurant"><i class="fa-solid fa-circle-info"></i></button>
+                                <div class="check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <small id="message-RestaurantLayout"></small>
+                            </div>
+                        </div>
+                        <input type="hidden" name="Owner_ID">
+                        <input type="hidden" name="City_ID">
+                        <input type="hidden" name="Discount_ID">
+                </div>
+                <div class="modal-footer">
+                    <div class="modal_create">
+                        <input type="submit" value="Create" class="btn_create" onclick="SignUp();playBtnAudio();">
+                        <div class="i">
+                            <i class="fas fa-user-plus" title="Icon Create"></i>
+                        </div>
+                    </div>
+                    </form>
+                    <button data-bs-dismiss="modal" class="btn_close" title="Close (Alt + X)" onclick="playBtnAudio();">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader Start -->
+    <div class="loader-container">
+        <img src="../loaders/Restaurant_Login_Page/loader2.gif" alt="">
+    </div>
+    <!-- Loader End -->
+    <!-- ----------------------- -->
+    <script src="../Js/js_Bootstrap.js"></script>
+    <script src="../Js/Audios.js"></script>
+    <script src="../Js/Restaurant_Login_Page.js"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+</body>
+
+</html>

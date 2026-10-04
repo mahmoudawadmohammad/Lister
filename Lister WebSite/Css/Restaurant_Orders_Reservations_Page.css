@@ -1,0 +1,181 @@
+body {
+    background-color: var(--bodyColor);
+    overflow-x: hidden;
+}
+
+.sidebar .order-link:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    border-width: 1.4vw;
+    border-color: transparent var(--primaryColor) transparent transparent;
+    border-style: solid;
+    transition: var(--tran-03);
+}
+
+.orders h2 {
+    margin-top: -60px;
+}
+
+.orders h2,
+.reservations h2 {
+    position: absolute;
+    left: 60%;
+    transform: translateX(-50%);
+    border: 0.1vw solid var(--textColors);
+    padding: 0.3vw;
+    transition: var(--tran-04);
+    border-radius: 1.8vw 0.5vw;
+    cursor: default;
+}
+
+.orders h2::selection,
+.reservations h2::selection {
+    background-color: transparent;
+}
+
+.orders h2:hover,
+.reservations h2:hover {
+    background-color: var(--textColors);
+    color: white;
+    transition: var(--tran-04);
+}
+
+.orders h2:hover::before,
+.orders h2:hover::after,
+.reservations h2:hover::before,
+.reservations h2:hover::after {
+    background-color: var(--textColors);
+    transition: var(--tran-04);
+}
+
+.sidebar.close~.orders h2,
+.sidebar.close~.reservations h2 {
+    left: 50%;
+    transition: var(--tran-04);
+}
+
+.orders h2::before,
+.reservations h2::before {
+    background-color: black;
+    position: absolute;
+    height: 0.2vw;
+    top: 50%;
+    right: 100%;
+    content: "";
+    width: 38.6vw;
+}
+
+.orders h2::after,
+.reservations h2::after {
+    background-color: black;
+    position: absolute;
+    height: 0.2vw;
+    top: 50%;
+    left: 100%;
+    content: "";
+    width: 34.9vw;
+}
+
+.sidebar.close~.orders h2::after,
+.sidebar.close~.reservations h2::after {
+    width: 43.7vw;
+}
+
+#separater {
+    border: 2px solid var(--textColors);
+    margin: 10vw 30%;
+    border-radius: 45%;
+    width: 50%;
+    transition: var(--tran-03);
+}
+
+section .table_responsive {
+    max-width: 950px;
+    border: 1px solid var(--primaryColor);
+    background-color: var(--bodyColor);
+    padding: 5px;
+    overflow: auto;
+    margin: 10vw 0 1vw;
+    margin-left: 30%;
+    border-radius: 10px;
+    transition: var(--tran-04);
+}
+
+.sidebar.close ~ section .table_responsive {
+    max-width: 1100px;
+    margin-left: 20%;
+    transition: var(--tran-04);
+}
+
+table {
+    width: 100%;
+    font-size: 13px;
+    color: #444;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+
+table>thead {
+    background-color: var(--primaryColor);
+    color: #fff;
+}
+
+table>thead:hover {
+    background-color: var(--textColors);
+
+}
+
+table>thead th {
+    padding: 15px;
+    text-align: center;
+}
+
+table th,
+table td {
+    border: 1px solid #00000017;
+    padding: 10px 15px;
+}
+
+.action_btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action_btn>button {
+    text-decoration: none;
+    color: #444;
+    background: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 7px 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.action_btn>button:nth-child(1) {
+    border-color: #2ecc71;
+}
+
+.action_btn>button:nth-child(2) {
+    border-color: #e74c3c;
+}
+
+.action_btn>button:hover {
+    box-shadow: 0 3px 8px #0003;
+}
+
+table>tbody>tr {
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+table>tbody>tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+}
+
+table>tbody>tr:hover{
+    filter: drop-shadow(0px 2px 6px #0002);
+}

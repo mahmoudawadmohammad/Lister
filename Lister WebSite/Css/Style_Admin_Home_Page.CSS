@@ -1,0 +1,110 @@
+html[dir="ltr"] #PFP_Admin_Home_Page {
+    position: relative;
+    left: 15.5vw;
+    width: calc(100% - 15.5vw);
+    transition: all 0.3s ease;
+}
+
+html[dir="ltr"] .sidebar.close~#PFP_Admin_Home_Page {
+    position: relative;
+    left: 4.8vw;
+    width: calc(100% - 4.8vw);
+    transition: all 0.3s ease;
+}
+
+html[dir="rtl"] #PFP_Admin_Home_Page {
+    position: relative;
+    right: 15.5vw;
+    width: calc(100% - 15.5vw);
+    transition: all 0.3s ease;
+}
+
+html[dir="rtl"] .sidebar.close~#PFP_Admin_Home_Page {
+    position: relative;
+    right: 4.8vw;
+    width: calc(100% - 4.8vw);
+    transition: all 0.3s ease;
+}
+
+#PFP_Customers_Number_In_cites_Table thead tr th,
+#PFP_Customers_Number_In_cites_Table tbody tr td {
+    width: 50%;
+}
+
+@media screen and (max-width: 1800px) {
+    .PFP_Containers {
+        width: 75vw;
+    }
+    .PFP_Containers table {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .PFP_Containers {
+        width: 75vw;
+    }
+    .PFP_Containers table {
+        font-size: 1.8vw;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .PFP_Containers {
+        width: 75vw;
+    }
+    .PFP_Containers table {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .PFP_Containers {
+        width: 75vw;
+    }
+    .PFP_Containers table {
+        font-size: 1.4vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .PFP_Containers {
+        width: 75vw;
+    }
+    .PFP_Containers table {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .PFP_Containers {
+        width: 60vw;
+    }
+    .PFP_Containers table {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .PFP_Containers {
+        width: 45vw;
+    }
+    .PFP_Containers table {
+        font-size: 1.8vw;
+    }
+}
+
+.PFP_Containers {
+    margin: 1.4vw auto;
+}
+
+.PFP_Containers table {
+    text-align: center;
+    font-weight: 450;
+}
+
+.PFP_Containers table caption {
+    font-size: 1.8vw;
+    font-weight: bold;
+    text-align: center;
+}

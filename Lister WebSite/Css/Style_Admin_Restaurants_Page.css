@@ -1,0 +1,124 @@
+html[dir="ltr"] .PFP_Admin_Restaurants_Page {
+    position: relative;
+    left: 15.5vw;
+    width: calc(100% - 15.5vw);
+    transition: all 0.3s ease;
+}
+
+html[dir="ltr"] .sidebar.close~.PFP_Admin_Restaurants_Page {
+    position: relative;
+    left: 4.8vw;
+    width: calc(100% - 4.8vw);
+    transition: all 0.3s ease;
+}
+
+.PFP_Restaurant_Card {
+    width: 40vw;
+    height: 20vw;
+    margin: 0 auto;
+    border-radius: 1vw;
+    position: relative;
+    -webkit-transition: 1.5s ease-in-out;
+    transition: 1.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.PFP_Restaurant_Content {
+    transform: translatez(5vw) scale(1);
+}
+
+.PFP_Restaurant_Content h1 {
+    color: blue;
+    text-align: center;
+}
+
+.PFP_Restaurant_Front_Card {
+    background-color: brown;
+    z-index: 1;
+}
+
+.PFP_Restaurant_Back_Card {
+    background-color: yellow;
+    z-index: 0;
+    transform: rotateY(180deg);
+}
+
+.PFP_Restaurant_Front_Card,
+.PFP_Restaurant_Back_Card {
+    position: absolute;
+    width: 100%;
+    height: 18.5vw;
+    padding: 0.4vw 0.3vw;
+    color: #fff;
+    transform-style: preserve-3d;
+    border-radius: 2vw;
+    backface-visibility: hidden;
+}
+
+.PFP_Restaurant_Card:hover {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+ul {
+    list-style-type: none;
+    list-style-position: inside;
+    padding: 0;
+    width: 17vw;
+}
+
+ul li {
+    border-bottom: 0.1vw solid #444;
+    text-align: left;
+}
+
+.PFP_Restaurant_Front_Up_Card {
+    display: flex;
+}
+
+.PFP_Restaurant_Front_Up_Card img {
+    margin: 0.4vw 1vw 0.4vw 2vw;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+}
+
+.PFP_Restaurant_Front_Down_Card {
+    display: flex;
+    justify-content: space-evenly;
+    height: 10.vw;
+}
+
+.PFP_Restaurant_Title_Card {
+    width: 100%;
+}
+
+ul li .PFP_Title_Information {
+    color: blue;
+    font-size: 1.3vw;
+    font-weight: 500;
+    padding: 0 0.4vw;
+}
+
+ul li .PFP_Information {
+    color: red;
+    font-size: 1.2vw;
+    font-weight: 300;
+}
+
+ul li .PFP_Title_Information,
+ul li .PFP_Information {
+    font-weight: bold;
+    width: 100%;
+}
+
+.PFP_Restaurant_Card_Buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.PFP_Restaurant_Title_Card h2 {
+    text-align: center;
+    font-size: 2vw;
+    margin: auto a;
+}
